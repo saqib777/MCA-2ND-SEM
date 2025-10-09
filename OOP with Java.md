@@ -2006,5 +2006,319 @@ public class CharStreamExample {
 - Proper use of **read(), write(), flush(), and close()** ensures **efficient and safe I/O operations** in Java programs.
 
 
+---
+
+### Q12. Explain Control Structures in Java with an Example
+
+**Answer:**
+
+In Java, **control structures** are used to **control the flow of execution** of statements in a program.  
+They allow the program to **make decisions, repeat tasks, or branch execution** based on conditions.
+
+---
+
+## **1. Types of Control Structures in Java**
+
+Control structures in Java are mainly of **three types**:
+
+### **A. Decision-Making (Conditional) Statements**
+
+These statements allow the program to **execute certain code based on conditions**.
+
+1. **if statement**
+```java
+int num = 10;
+if(num > 0) {
+    System.out.println("Number is positive");
+}
+```
+
+2. **if-else statement**
+```java
+int num = -5;
+if(num > 0) {
+    System.out.println("Positive");
+} else {
+    System.out.println("Negative or Zero");
+}
+```
+
+3. **if-else-if ladder**
+```java
+int marks = 85;
+if(marks >= 90) {
+    System.out.println("Grade A");
+} else if(marks >= 75) {
+    System.out.println("Grade B");
+} else {
+    System.out.println("Grade C");
+}
+```
+
+4. **switch statement**
+```java
+int day = 3;
+switch(day) {
+    case 1: System.out.println("Monday"); break;
+    case 2: System.out.println("Tuesday"); break;
+    case 3: System.out.println("Wednesday"); break;
+    default: System.out.println("Other day");
+}
+```
+
+---
+
+### **B. Looping (Iteration) Statements**
+
+These statements allow the program to **repeat a block of code multiple times**.
+
+1. **for loop**
+```java
+for(int i = 1; i <= 5; i++) {
+    System.out.println("i = " + i);
+}
+```
+
+2. **while loop**
+```java
+int i = 1;
+while(i <= 5) {
+    System.out.println("i = " + i);
+    i++;
+}
+```
+
+3. **do-while loop**
+```java
+int i = 1;
+do {
+    System.out.println("i = " + i);
+    i++;
+} while(i <= 5);
+```
+
+---
+
+### **C. Jump Statements**
+
+These statements **alter the normal flow** of execution.
+
+1. **break** – exits a loop or switch.
+```java
+for(int i = 1; i <= 5; i++) {
+    if(i == 3) break; // exit loop
+    System.out.println(i);
+}
+// Output: 1 2
+```
+
+2. **continue** – skips the current iteration and continues with next.
+```java
+for(int i = 1; i <= 5; i++) {
+    if(i == 3) continue;
+    System.out.println(i);
+}
+// Output: 1 2 4 5
+```
+
+3. **return** – exits from the current method.
+
+---
+
+## **2. Example Program Using Control Structures**
+
+```java
+public class ControlExample {
+    public static void main(String[] args) {
+        int[] numbers = {10, -5, 20, 0, -15};
+
+        // Using for loop and if-else
+        for(int num : numbers) {
+            if(num > 0) {
+                System.out.println(num + " is Positive");
+            } else if(num < 0) {
+                System.out.println(num + " is Negative");
+            } else {
+                System.out.println(num + " is Zero");
+            }
+        }
+
+        // Using switch to categorize number count
+        int count = numbers.length;
+        switch(count) {
+            case 5: System.out.println("Array has 5 elements"); break;
+            default: System.out.println("Array size unknown");
+        }
+    }
+}
+```
+
+**Output:**
+```
+10 is Positive
+-5 is Negative
+20 is Positive
+0 is Zero
+-15 is Negative
+Array has 5 elements
+```
+
+---
+
+### **3. Summary Table**
+
+| Control Structure Type | Examples | Purpose |
+|------------------------|---------|---------|
+| Decision-Making | if, if-else, if-else-if, switch | Execute code based on conditions |
+| Looping | for, while, do-while | Repeat code multiple times |
+| Jump Statements | break, continue, return | Alter flow of execution |
+
+---
+
+### **Conclusion:**
+
+Control structures in Java **allow decision-making, repetition, and branching**, which are essential for **writing efficient, logical, and dynamic programs**.  
+Mastering them enables programmers to **handle complex logic and repetitive tasks** effectively.
+
+---
+
+### Q14. Explain Creating, Reading, Writing, and Deleting File Operations
+
+**Answer:**
+
+In Java, **file handling** is done using the **`java.io`** and **`java.nio`** packages.  
+File operations allow programs to **store data permanently**, **retrieve it**, and **manage files** efficiently.
+
+---
+
+## **1. Creating Files**
+
+Java provides multiple ways to create a file:
+
+### **Using File Class**
+```java
+import java.io.*;
+
+public class CreateFileExample {
+    public static void main(String[] args) {
+        try {
+            File file = new File("example.txt");
+            if(file.createNewFile()) {
+                System.out.println("File created: " + file.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+**Explanation:**
+- `File file = new File("example.txt")` creates a File object.  
+- `createNewFile()` actually creates the file on the system.  
+- Throws `IOException` if an error occurs.
+
+---
+
+## **2. Writing to Files**
+
+### **Using FileWriter or BufferedWriter**
+```java
+import java.io.*;
+
+public class WriteFileExample {
+    public static void main(String[] args) {
+        String data = "Hello, Java File Handling!";
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("example.txt"))) {
+            bw.write(data);  // Write string data
+            bw.newLine();    // Add a newline
+            bw.write("This is a second line.");
+            bw.flush();      // Ensure data is written
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+**Explanation:**
+- `FileWriter` writes characters to a file.  
+- `BufferedWriter` improves performance by buffering output.  
+- `flush()` ensures all data is written to the file.  
+
+---
+
+## **3. Reading from Files**
+
+### **Using FileReader or BufferedReader**
+```java
+import java.io.*;
+
+public class ReadFileExample {
+    public static void main(String[] args) {
+        try (BufferedReader br = new BufferedReader(new FileReader("example.txt"))) {
+            String line;
+            while((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+**Explanation:**
+- `BufferedReader` allows reading text **line by line** efficiently.  
+- `readLine()` returns `null` when **end of file** is reached.
+
+---
+
+## **4. Deleting Files**
+
+### **Using File Class**
+```java
+import java.io.*;
+
+public class DeleteFileExample {
+    public static void main(String[] args) {
+        File file = new File("example.txt");
+        if(file.delete()) {
+            System.out.println("File deleted: " + file.getName());
+        } else {
+            System.out.println("Failed to delete the file.");
+        }
+    }
+}
+```
+
+**Explanation:**
+- `delete()` removes the file from the filesystem.  
+- Returns `true` if deletion is successful, `false` otherwise.  
+
+---
+
+## **5. Summary of File Operations**
+
+| Operation | Class/Method | Purpose |
+|-----------|--------------|---------|
+| Create | `File.createNewFile()` | Creates a new file |
+| Write | `FileWriter`, `BufferedWriter` | Writes data to file |
+| Read | `FileReader`, `BufferedReader` | Reads data from file |
+| Delete | `File.delete()` | Deletes the file |
+
+---
+
+### **Conclusion:**
+
+- Java provides a **simple and flexible API** for file operations.  
+- Using **File, FileReader/FileWriter, BufferedReader/BufferedWriter**, you can **create, read, write, and delete files**.  
+- Proper use of **try-with-resources** ensures files are **safely closed** and resources are released automatically.  
+- Mastery of file operations is essential for **data storage, logging, and file-based applications**.
+
+
+
 
 
