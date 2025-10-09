@@ -1886,6 +1886,124 @@ public class Example {
 - Together, these constructs form the **foundation for writing meaningful Java programs**.
 
 
+---
+
+### Q10. Explain Methods in Streams
+
+**Answer:**
+
+In Java, a **stream** is a **sequence of data** that can be read from or written to **sources like files, memory, or network connections**.  
+Streams in Java are divided into **Byte Streams** (InputStream/OutputStream) and **Character Streams** (Reader/Writer).
+
+---
+
+## **1. Types of Streams**
+
+| Type | Purpose | Example Classes |
+|------|---------|----------------|
+| **Byte Streams** | Read/write data in bytes | `FileInputStream`, `FileOutputStream`, `BufferedInputStream` |
+| **Character Streams** | Read/write data in characters | `FileReader`, `FileWriter`, `BufferedWriter` |
+
+---
+
+## **2. Common Methods in Byte Streams**
+
+**InputStream Methods:**
+| Method | Description |
+|--------|-------------|
+| `int read()` | Reads one byte from the input stream; returns -1 at end of file |
+| `int read(byte[] b)` | Reads bytes into a byte array |
+| `int read(byte[] b, int off, int len)` | Reads `len` bytes into array starting at offset `off` |
+| `long skip(long n)` | Skips `n` bytes of input |
+| `int available()` | Returns the number of bytes that can be read without blocking |
+| `void close()` | Closes the stream and releases resources |
+
+**OutputStream Methods:**
+| Method | Description |
+|--------|-------------|
+| `void write(int b)` | Writes a single byte |
+| `void write(byte[] b)` | Writes byte array |
+| `void write(byte[] b, int off, int len)` | Writes `len` bytes starting from offset `off` |
+| `void flush()` | Flushes buffered data |
+| `void close()` | Closes the stream |
+
+**Example (FileOutputStream):**
+```java
+import java.io.*;
+
+public class ByteStreamExample {
+    public static void main(String[] args) {
+        String data = "Hello, Java Streams!";
+        try (FileOutputStream fos = new FileOutputStream("stream.txt")) {
+            byte[] bytes = data.getBytes();
+            fos.write(bytes); // write bytes
+            fos.flush();      // ensure all bytes are written
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+---
+
+## **3. Common Methods in Character Streams**
+
+**Reader Methods:**
+| Method | Description |
+|--------|-------------|
+| `int read()` | Reads a single character |
+| `int read(char[] cbuf)` | Reads characters into an array |
+| `int read(char[] cbuf, int off, int len)` | Reads `len` characters from offset `off` |
+| `void close()` | Closes the reader |
+
+**Writer Methods:**
+| Method | Description |
+|--------|-------------|
+| `void write(int c)` | Writes a single character |
+| `void write(char[] cbuf)` | Writes characters from array |
+| `void write(char[] cbuf, int off, int len)` | Writes `len` characters from offset `off` |
+| `void write(String str)` | Writes entire string |
+| `void write(String str, int off, int len)` | Writes substring of string |
+| `void flush()` | Flushes buffered characters |
+| `void close()` | Closes the writer |
+
+**Example (FileWriter and BufferedWriter):**
+```java
+import java.io.*;
+
+public class CharStreamExample {
+    public static void main(String[] args) {
+        String data = "Hello, Character Streams!";
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("charstream.txt"))) {
+            bw.write(data);      // write string
+            bw.newLine();        // add newline
+            bw.write(data, 6, 9); // write substring "Character"
+            bw.flush();          // flush buffer
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+---
+
+## **4. Key Points About Streams Methods**
+
+1. **Read/Write**: Input streams read, output streams write.  
+2. **Buffered vs Non-buffered**: Buffered streams improve **performance** by reducing disk I/O.  
+3. **Closing Streams**: Always close streams using `close()` or **try-with-resources** to release system resources.  
+4. **Flushing Streams**: `flush()` ensures all buffered data is physically written.  
+5. **End of Stream**: `read()` returns **-1** when the end of the stream is reached.
+
+---
+
+### **Conclusion:**
+
+- Streams provide a **uniform way to handle I/O** in Java, for both **bytes and characters**.  
+- **InputStream/Reader** methods are used for **reading data**, whereas **OutputStream/Writer** methods are used for **writing data**.  
+- Proper use of **read(), write(), flush(), and close()** ensures **efficient and safe I/O operations** in Java programs.
 
 
 
