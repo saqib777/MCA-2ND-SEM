@@ -1575,6 +1575,316 @@ BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
 Java’s **salient features** make it a **versatile, secure, and portable programming language** suitable for a wide range of applications, from **desktop software** to **enterprise systems** and **mobile apps**.  
 Its combination of **simplicity, robustness, and platform independence** is the reason for its **global popularity** among developers.
 
+---
+
+### Q7. Explain About Methods in Java with an Example
+
+**Answer:**
+
+In Java, a **method** is a **block of code** that performs a specific task, is **reusable**, and can be called multiple times from different parts of a program.  
+Methods help in **modular programming**, **reducing redundancy**, and **improving readability**.
+
+---
+
+## **Definition of Method**
+A method is a collection of statements that **performs a specific operation** and can **return a value**.  
+Syntax:
+```java
+returnType methodName(parameters) {
+    // body of the method
+    // statements
+    return value; // optional
+}
+```
+
+---
+
+## **Types of Methods in Java**
+
+### **1. Predefined Methods**
+- Methods provided by Java API classes.  
+- Examples: `System.out.println()`, `Math.sqrt()`, `String.length()`.  
+
+**Example:**
+```java
+int len = "Hello".length();
+System.out.println("Length: " + len); // Output: 5
+```
+
+---
+
+### **2. User-Defined Methods**
+- Methods created by the programmer to perform **specific tasks**.  
+- Can be **called from main() or other methods**.
+
+**Example:**
+```java
+public class MethodExample {
+
+    // Method with parameters and return type
+    static int add(int a, int b) {
+        return a + b;
+    }
+
+    // Method without return type (void)
+    static void greet(String name) {
+        System.out.println("Hello, " + name);
+    }
+
+    public static void main(String[] args) {
+        int sum = add(10, 20); // calling add method
+        System.out.println("Sum: " + sum);
+
+        greet("Saqib"); // calling greet method
+    }
+}
+```
+
+**Output:**
+```
+Sum: 30
+Hello, Saqib
+```
+
+---
+
+## **3. Methods with and without Parameters**
+
+| Type | Description | Example |
+|------|-------------|---------|
+| No Parameters, No Return | Performs task without input or output | `void display()` |
+| With Parameters, No Return | Receives data but does not return | `void greet(String name)` |
+| No Parameters, With Return | Returns value but does not need input | `int getRandomNumber()` |
+| With Parameters and Return | Receives input and returns value | `int add(int a, int b)` |
+
+---
+
+## **4. Method Calling**
+- Methods can be **called from main()**, **other methods**, or **objects** depending on whether they are static or instance methods.
+
+**Static Method Example:**
+```java
+class Test {
+    static void hello() {
+        System.out.println("Hello, Static Method");
+    }
+    public static void main(String[] args) {
+        hello(); // direct call
+    }
+}
+```
+
+**Instance Method Example:**
+```java
+class Test {
+    void hello() {
+        System.out.println("Hello, Instance Method");
+    }
+    public static void main(String[] args) {
+        Test t = new Test();
+        t.hello(); // call through object
+    }
+}
+```
+
+---
+
+## **5. Method Overloading**
+- Java allows **methods with the same name** but **different parameters** in the same class.  
+- Improves readability and modularity.
+
+**Example:**
+```java
+class Calculator {
+    int add(int a, int b) { return a + b; }
+    double add(double a, double b) { return a + b; }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Calculator c = new Calculator();
+        System.out.println(c.add(10, 20));   // 30
+        System.out.println(c.add(10.5, 20.5)); // 31.0
+    }
+}
+```
+
+---
+
+## **Advantages of Methods in Java**
+
+1. **Code Reusability:** Write once, use multiple times.  
+2. **Modularity:** Programs are divided into logical units.  
+3. **Readability:** Makes programs easier to understand.  
+4. **Maintainability:** Changes in a method reflect wherever it is called.  
+5. **Debugging Ease:** Errors are easier to locate in modular methods.
+
+---
+
+**Conclusion:**
+
+Methods are the **fundamental units of behavior** in Java programs.  
+By using methods effectively, developers can **write clean, modular, and reusable code**, reduce redundancy, and improve program readability and maintainability.
+
+---
+### Q8. Explain Variables, Data Types, and Operators in Java
+
+**Answer:**
+
+In Java, **variables, data types, and operators** are the fundamental building blocks of programming.  
+They allow developers to **store, manipulate, and process data** in a structured manner.
+
+---
+
+## **1. Variables in Java**
+
+A **variable** is a **named memory location** used to store data during program execution.  
+Variables in Java must be **declared before use** with a **data type**.
+
+### **Types of Variables**
+
+| Type | Description | Example |
+|------|-------------|---------|
+| **Local Variable** | Declared inside a method or block; exists only during method execution | `int x = 10;` |
+| **Instance Variable** | Declared inside a class but outside methods; each object has its own copy | `int age;` |
+| **Class/Static Variable** | Declared with `static` keyword; shared among all objects | `static int count;` |
+| **Final Variable (Constant)** | Value cannot be changed once initialized | `final int MAX = 100;` |
+
+**Example:**
+```java
+class Student {
+    int age;          // Instance variable
+    static int count; // Static variable
+
+    void setAge(int a) { // Local variable 'a'
+        age = a;
+    }
+}
+```
+
+---
+
+## **2. Data Types in Java**
+
+Java is a **strongly-typed language**, meaning each variable must have a **data type**.  
+Data types in Java are broadly classified as **Primitive** and **Non-Primitive (Reference)** types.
+
+### **A. Primitive Data Types**
+
+| Type | Size | Description | Example |
+|------|------|-------------|---------|
+| `byte` | 1 byte | Stores small integers | `byte b = 10;` |
+| `short` | 2 bytes | Stores short integers | `short s = 1000;` |
+| `int` | 4 bytes | Stores integers | `int x = 50000;` |
+| `long` | 8 bytes | Stores large integers | `long l = 100000L;` |
+| `float` | 4 bytes | Stores floating-point numbers | `float f = 5.5f;` |
+| `double` | 8 bytes | Stores double-precision floating-point | `double d = 19.99;` |
+| `char` | 2 bytes | Stores a single Unicode character | `char c = 'A';` |
+| `boolean` | 1 bit | Stores `true` or `false` | `boolean flag = true;` |
+
+### **B. Non-Primitive Data Types**
+- Also called **Reference Data Types**.  
+- Includes **Classes, Interfaces, Arrays, Strings, and Objects**.  
+- Size depends on the object, not fixed like primitives.
+
+**Example:**
+```java
+String name = "Saqib";
+int[] arr = {1, 2, 3};
+```
+
+---
+
+## **3. Operators in Java**
+
+Operators are **symbols** that perform **operations on variables and values**.
+
+### **A. Arithmetic Operators**
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `+` | Addition | `5 + 3 = 8` |
+| `-` | Subtraction | `5 - 3 = 2` |
+| `*` | Multiplication | `5 * 3 = 15` |
+| `/` | Division | `6 / 3 = 2` |
+| `%` | Modulus | `5 % 3 = 2` |
+
+---
+
+### **B. Relational Operators**
+Used to compare two values; return **boolean**.
+
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `==` | Equal to | `5 == 5 → true` |
+| `!=` | Not equal to | `5 != 3 → true` |
+| `>` | Greater than | `5 > 3 → true` |
+| `<` | Less than | `3 < 5 → true` |
+| `>=` | Greater than or equal | `5 >= 5 → true` |
+| `<=` | Less than or equal | `3 <= 5 → true` |
+
+---
+
+### **C. Logical Operators**
+Used with **boolean values**.
+
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `&&` | Logical AND | `(true && false) → false` |
+| `||` | Logical OR | `(true || false) → true` |
+| `!` | Logical NOT | `!(true) → false` |
+
+---
+
+### **D. Assignment Operators**
+Assign values to variables.
+
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `=` | Simple assignment | `int x = 5;` |
+| `+=` | Add and assign | `x += 5; // x = x + 5` |
+| `-=` | Subtract and assign | `x -= 2; // x = x - 2` |
+| `*=` | Multiply and assign | `x *= 3; // x = x * 3` |
+| `/=` | Divide and assign | `x /= 2; // x = x / 2` |
+| `%=` | Modulus and assign | `x %= 3; // x = x % 3` |
+
+---
+
+### **E. Unary Operators**
+Operators that work on a single operand.
+
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `++` | Increment by 1 | `x++` |
+| `--` | Decrement by 1 | `x--` |
+| `+` | Unary plus | `+x` |
+| `-` | Unary minus | `-x` |
+
+---
+
+### **F. Example Using Variables, Data Types, and Operators**
+```java
+public class Example {
+    public static void main(String[] args) {
+        int a = 10;     // integer variable
+        int b = 5;      // integer variable
+        int sum = a + b; // arithmetic operator +
+        boolean flag = (sum > 10); // relational operator >
+
+        System.out.println("Sum: " + sum);      // Output: 15
+        System.out.println("Is sum > 10? " + flag); // Output: true
+    }
+}
+```
+
+---
+
+### **Conclusion:**
+
+- **Variables** store data, and their type defines the kind of data they hold.  
+- **Data types** ensure **type safety** and optimize memory usage.  
+- **Operators** perform **mathematical, logical, or relational operations** on variables and values.  
+- Together, these constructs form the **foundation for writing meaningful Java programs**.
+
 
 
 
