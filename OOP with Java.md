@@ -962,6 +962,465 @@ However, to **avoid ambiguity and complexity**, it **does not support Multiple o
 Instead, Java provides **interfaces** to achieve multiple inheritance safely and efficiently, maintaining **clarity, simplicity, and robustness** in object-oriented design.
 
 
+---
+
+### Q3. Write a Short Note on Constructor and Finalizer
+
+**Answer:**
+
+In Java, **constructors** and **finalizers** are special methods used for **initialization** and **cleanup** of objects, respectively.  
+They are important concepts in **object-oriented programming**, ensuring proper creation and destruction of objects.
+
+---
+
+## **1. Constructor**
+
+A **constructor** is a **special method** in a class that is invoked automatically **when an object is created**.  
+It is used to **initialize the object’s state** (assign values to instance variables) and perform any setup operations required.
+
+### **Characteristics of a Constructor:**
+1. **Same Name as Class:** The constructor must have the **same name as the class**.  
+2. **No Return Type:** Constructors **do not have a return type**, not even `void`.  
+3. **Automatically Called:** It is invoked **automatically** when the object is created.  
+4. **Can Be Overloaded:** Java allows multiple constructors with **different parameters**.
+
+### **Types of Constructors:**
+- **Default Constructor:** No parameters; automatically provided by Java if none is defined.  
+- **Parameterized Constructor:** Accepts arguments to initialize an object with specific values.
+
+### **Example:**
+```java
+class Student {
+    String name;
+    int age;
+
+    // Default constructor
+    Student() {
+        name = "Unknown";
+        age = 0;
+    }
+
+    // Parameterized constructor
+    Student(String n, int a) {
+        name = n;
+        age = a;
+    }
+
+    void display() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Student s1 = new Student(); // Calls default constructor
+        Student s2 = new Student("Saqib", 25); // Calls parameterized constructor
+
+        s1.display();
+        s2.display();
+    }
+}
+```
+
+**Output:**
+```
+Name: Unknown, Age: 0
+Name: Saqib, Age: 25
+```
+
+**Advantages:**
+- Ensures objects are **properly initialized** before use.  
+- Makes code **cleaner and easier to maintain**.  
+- Supports **constructor overloading** for flexibility.
+
+---
+
+## **2. Finalizer**
+
+A **finalizer** is a method used to **perform cleanup operations** before an object is **destroyed by the Garbage Collector (GC)**.  
+It allows releasing resources like **file handles, database connections, or network sockets**.
+
+### **Characteristics of Finalizer:**
+1. Defined by **overriding the `finalize()` method** from the `Object` class.  
+2. Called **automatically by the garbage collector** when there are no more references to the object.  
+3. Used for **cleanup**, not for general program logic.  
+4. Execution is **not guaranteed** immediately or in a specific order.
+
+### **Syntax:**
+```java
+class Test {
+    protected void finalize() {
+        System.out.println("Object is being destroyed");
+    }
+}
+```
+
+### **Example:**
+```java
+class Demo {
+    Demo() {
+        System.out.println("Object Created");
+    }
+
+    protected void finalize() {
+        System.out.println("Object Destroyed");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Demo d = new Demo();
+        d = null; // Remove reference
+
+        System.gc(); // Suggests garbage collection
+        System.out.println("End of program");
+    }
+}
+```
+
+**Output (may vary):**
+```
+Object Created
+End of program
+Object Destroyed
+```
+
+**Note:**  
+- The `finalize()` method is **deprecated in Java 9+** because garbage collection is non-deterministic.  
+- Recommended to use **try-with-resources** or **explicit cleanup methods** instead of relying on finalizers.
+
+---
+
+## **Comparison Table:**
+
+| Feature | Constructor | Finalizer |
+|---------|------------|-----------|
+| Purpose | Initialize an object | Cleanup before object destruction |
+| Invocation | Automatically on object creation | Automatically by garbage collector |
+| Name | Same as class | `finalize()` |
+| Return Type | None | void |
+| Parameters | Can be parameterized | None |
+| Execution Time | During object creation | During garbage collection (non-deterministic) |
+
+---
+
+**Conclusion:**
+Constructors ensure that an object is **properly initialized**, while finalizers (or cleanup methods) help in **releasing resources** before the object is destroyed. Together, they manage **object lifecycle** in Java efficiently.
+
+---
+
+### Q4. Explain Creating, Reading, Writing and Deleting File Operations in Java
+
+**Answer:**
+
+Java provides the **`java.io` package** for handling files and performing **file operations** like creating, reading, writing, and deleting files.  
+File handling is essential for **storing, retrieving, and managing data** in a persistent way.
+
+---
+
+## **1. Creating a File**
+
+A file can be created using the **`File` class** or **`FileOutputStream`**.
+
+**Using `File` class:**
+```java
+import java.io.*;
+
+public class CreateFileExample {
+    public static void main(String[] args) {
+        try {
+            File file = new File("example.txt");
+            if (file.createNewFile()) {
+                System.out.println("File created: " + file.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+**Explanation:**
+- `createNewFile()` creates a new empty file if it does not exist.  
+- Throws `IOException` if an I/O error occurs.
+
+---
+
+## **2. Writing to a File**
+
+Data can be written using **`FileWriter`**, **`FileOutputStream`**, or **`BufferedWriter`**.
+
+**Example using `FileWriter`:**
+```java
+import java.io.*;
+
+public class WriteFileExample {
+    public static void main(String[] args) {
+        try {
+            FileWriter writer = new FileWriter("example.txt");
+            writer.write("Hello, Java File Handling!");
+            writer.close();
+            System.out.println("Data written successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+**Explanation:**
+- `FileWriter` opens the file in **write mode**.  
+- `close()` flushes and closes the stream.  
+- Use `FileWriter("example.txt", true)` to **append** data instead of overwriting.
+
+---
+
+## **3. Reading from a File**
+
+Data can be read using **`FileReader`**, **`BufferedReader`**, or **`Scanner`**.
+
+**Example using `BufferedReader`:**
+```java
+import java.io.*;
+
+public class ReadFileExample {
+    public static void main(String[] args) {
+        try {
+            File file = new File("example.txt");
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+            br.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+**Explanation:**
+- `BufferedReader` reads **text efficiently line by line**.  
+- Always close streams to **release system resources**.
+
+---
+
+## **4. Deleting a File**
+
+A file can be deleted using the **`delete()`** method of the `File` class.
+
+**Example:**
+```java
+import java.io.File;
+
+public class DeleteFileExample {
+    public static void main(String[] args) {
+        File file = new File("example.txt");
+        if (file.delete()) {
+            System.out.println("Deleted the file: " + file.getName());
+        } else {
+            System.out.println("Failed to delete the file.");
+        }
+    }
+}
+```
+
+**Explanation:**
+- `delete()` returns **true** if deletion is successful.  
+- Returns **false** if the file does not exist or cannot be deleted.
+
+---
+
+## **Important Notes on File Handling**
+
+1. Always **handle exceptions** (`IOException`) during file operations.  
+2. Use **try-with-resources** in Java 7+ to automatically close streams:
+```java
+try (BufferedReader br = new BufferedReader(new FileReader("example.txt"))) {
+    // read file
+} catch (IOException e) {
+    e.printStackTrace();
+}
+```
+3. Streams must always be **closed** to prevent resource leaks.  
+4. Files can be manipulated **byte-wise** (using `FileInputStream/FileOutputStream`) or **character-wise** (using `FileReader/FileWriter`).  
+
+---
+
+## **Summary Table of File Operations**
+
+| Operation | Class/Method Used | Description |
+|-----------|-----------------|-------------|
+| Create | `File.createNewFile()` | Creates a new file if not exists |
+| Write | `FileWriter.write()` / `FileOutputStream.write()` | Writes data to a file |
+| Read | `FileReader.read()` / `BufferedReader.readLine()` | Reads data from a file |
+| Delete | `File.delete()` | Deletes the file from storage |
+
+---
+
+**Conclusion:**
+
+Java’s file handling mechanisms allow developers to **create, read, write, and delete files easily**, enabling **persistent storage and efficient data management**.  
+Proper use of streams, exception handling, and resource management ensures **robust and error-free applications**.
+
+--- 
+
+### Q5. Elucidate Methods of OutputStream/Writer with an Example
+
+**Answer:**
+
+In Java, **output streams** and **writers** are used to **write data** to destinations such as files, memory, or network connections.  
+They belong to the **`java.io` package** and are divided into **byte-oriented streams (OutputStream)** and **character-oriented streams (Writer)**.
+
+---
+
+## **1. OutputStream**
+
+`OutputStream` is an **abstract class** for writing **bytes** of data.  
+It is the superclass of all **byte-oriented output streams**.
+
+**Common Subclasses:**
+- `FileOutputStream` → Writes bytes to a file.  
+- `BufferedOutputStream` → Provides buffering to improve performance.  
+- `DataOutputStream` → Writes primitive data types in a machine-independent way.  
+- `ByteArrayOutputStream` → Writes data into a byte array.
+
+---
+
+### **Common Methods of OutputStream**
+
+| Method | Description |
+|--------|-------------|
+| `write(int b)` | Writes a single byte to the stream. |
+| `write(byte[] b)` | Writes an entire byte array to the stream. |
+| `write(byte[] b, int off, int len)` | Writes `len` bytes from byte array starting at offset `off`. |
+| `flush()` | Flushes the stream, ensuring all data is written out. |
+| `close()` | Closes the stream and releases system resources. |
+
+---
+
+### **Example Using OutputStream**
+```java
+import java.io.*;
+
+public class OutputStreamExample {
+    public static void main(String[] args) {
+        String data = "Hello, Java OutputStream!";
+        try {
+            FileOutputStream fos = new FileOutputStream("output.txt");
+
+            // Write data byte by byte
+            byte[] bytes = data.getBytes();
+            fos.write(bytes);
+
+            // Flush and close
+            fos.flush();
+            fos.close();
+
+            System.out.println("Data written successfully to output.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+**Explanation:**
+- `getBytes()` converts the string into a **byte array**.  
+- `write(byte[])` writes all bytes to the file.  
+- `flush()` ensures any buffered data is written.  
+- `close()` releases resources.
+
+---
+
+## **2. Writer**
+
+`Writer` is an **abstract class** for writing **characters** (text) rather than bytes.  
+It is the superclass for **character-oriented output streams**.
+
+**Common Subclasses:**
+- `FileWriter` → Writes characters to files.  
+- `BufferedWriter` → Buffers characters for efficient writing.  
+- `PrintWriter` → Provides convenient methods like `println()`.  
+- `CharArrayWriter` → Writes to a character array in memory.
+
+---
+
+### **Common Methods of Writer**
+
+| Method | Description |
+|--------|-------------|
+| `write(int c)` | Writes a single character. |
+| `write(char[] cbuf)` | Writes an entire character array. |
+| `write(char[] cbuf, int off, int len)` | Writes `len` characters from the array starting at offset `off`. |
+| `write(String str)` | Writes an entire string. |
+| `write(String str, int off, int len)` | Writes a substring of length `len` from offset `off`. |
+| `flush()` | Flushes the writer buffer. |
+| `close()` | Closes the writer and releases resources. |
+
+---
+
+### **Example Using Writer**
+```java
+import java.io.*;
+
+public class WriterExample {
+    public static void main(String[] args) {
+        String data = "Hello, Java Writer!";
+        try {
+            FileWriter fw = new FileWriter("writerOutput.txt");
+            BufferedWriter bw = new BufferedWriter(fw);
+
+            // Write string
+            bw.write(data);
+
+            // Add a new line
+            bw.newLine();
+
+            // Write a substring
+            bw.write(data, 7, 4); // Writes "Java"
+
+            // Flush and close
+            bw.flush();
+            bw.close();
+
+            System.out.println("Data written successfully to writerOutput.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+**Explanation:**
+- `BufferedWriter` improves performance by **reducing disk I/O operations**.  
+- `newLine()` writes the system-dependent line separator.  
+- Writing substrings or character arrays provides **fine-grained control**.
+
+---
+
+## **Key Differences Between OutputStream and Writer**
+
+| Feature | OutputStream | Writer |
+|---------|-------------|--------|
+| Data Type | Bytes | Characters |
+| Use Case | Binary data (images, audio) | Textual data (strings, files) |
+| Example Classes | FileOutputStream, DataOutputStream | FileWriter, BufferedWriter |
+| Methods | `write(byte[])`, `flush()`, `close()` | `write(char[])`, `write(String)`, `flush()`, `close()` |
+
+---
+
+**Conclusion:**
+
+- `OutputStream` is **byte-oriented** and suited for binary data.  
+- `Writer` is **character-oriented** and suited for textual data.  
+- Both provide **write, flush, and close methods** to ensure proper file operations.  
+- Using **buffered streams/writers** improves efficiency for large data.  
+- Mastery of these methods is **essential for file I/O operations in Java**.
 
 
 
