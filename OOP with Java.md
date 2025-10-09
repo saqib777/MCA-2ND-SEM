@@ -343,6 +343,409 @@ try {
 
 Exception handling improves program stability, readability, and ensures smooth execution even in the presence of errors.
 
+---
+
+### Q17. List the Advantages of Swing
+
+**Answer:**
+**Swing** is a part of Java’s **GUI toolkit** (`javax.swing` package) that builds upon AWT but offers **more advanced and flexible components**.  
+It provides a rich set of **lightweight, platform-independent** GUI elements used for creating interactive applications.
+
+**Major Advantages of Swing:**
+
+1. **Platform Independent:**  
+   Swing is written entirely in Java, so its appearance and behavior remain consistent across all operating systems.
+
+2. **Lightweight Components:**  
+   Unlike AWT, Swing components do not rely on native OS peers, making them faster and more customizable.
+
+3. **Pluggable Look and Feel:**  
+   Swing allows developers to change the UI theme dynamically using different look-and-feel options (e.g., Metal, Nimbus, Windows).
+
+4. **MVC Architecture:**  
+   Swing follows the **Model-View-Controller** pattern, separating data, interface, and logic for cleaner code design.
+
+5. **Rich Component Set:**  
+   Provides advanced controls like tables (`JTable`), trees (`JTree`), tabs (`JTabbedPane`), sliders, and more.
+
+6. **Customizable and Extensible:**  
+   Developers can easily extend existing Swing components or create new ones according to their needs.
+
+7. **Event Handling and Thread Safety:**  
+   Offers robust event-handling mechanisms and uses the **Event Dispatch Thread (EDT)** for smooth GUI updates.
+
+**Example:**
+```java
+import javax.swing.*;
+public class SwingExample {
+    public static void main(String[] args) {
+        JFrame f = new JFrame("Swing Demo");
+        JButton b = new JButton("Click Me");
+        f.add(b);
+        f.setSize(300, 200);
+        f.setVisible(true);
+    }
+}
+```
+
+In summary, Swing provides a **powerful, flexible, and consistent** framework for developing professional desktop applications in Java.
+
+---
+
+### Q18. Describe FilterStream
+
+**Answer:**
+A **FilterStream** in Java is a type of input or output stream that **filters data** as it is read from or written to another stream.  
+It acts as a **wrapper around an existing stream**, modifying or enhancing its functionality without altering the original data source.  
+Filter streams belong to the `java.io` package and are part of Java’s **decorator design pattern**, enabling stream chaining.
+
+**Types of Filter Streams:**
+1. **FilterInputStream:** Used for reading filtered data.  
+   Examples: `BufferedInputStream`, `DataInputStream`, `PushbackInputStream`.  
+2. **FilterOutputStream:** Used for writing filtered data.  
+   Examples: `BufferedOutputStream`, `DataOutputStream`, `PrintStream`.
+
+**Example:**
+```java
+FileInputStream fin = new FileInputStream("data.txt");
+BufferedInputStream bin = new BufferedInputStream(fin);
+int i;
+while((i = bin.read()) != -1) {
+    System.out.print((char)i);
+}
+bin.close();
+```
+Filter streams improve **efficiency, buffering, and data manipulation** while maintaining modularity and flexibility in I/O operations.
+
+---
+
+### Q19. What are the various features of a Menu?
+
+**Answer:**
+A **menu** in Java (part of the `java.awt` and `javax.swing` packages) is a GUI component that provides a **list of options or commands** for users to interact with.  
+It enhances the usability and organization of graphical applications by grouping related commands together.
+
+**Key Features of Menus:**
+1. **Menu Bar (`MenuBar` / `JMenuBar`):** The container for menus displayed at the top of a window.  
+2. **Menu (`Menu` / `JMenu`):** A drop-down list that holds menu items.  
+3. **Menu Items (`MenuItem` / `JMenuItem`):** Individual selectable options in a menu.  
+4. **Submenus:** Menus nested inside other menus for hierarchical structure.  
+5. **Checkbox and Radio Menu Items:** Allow toggling options (`JCheckBoxMenuItem`, `JRadioButtonMenuItem`).  
+6. **Keyboard Shortcuts:** Assigning key combinations to access menu items quickly using `setMnemonic()`.
+
+**Example (Swing):**
+```java
+JMenuBar mb = new JMenuBar();
+JMenu file = new JMenu("File");
+file.add(new JMenuItem("Open"));
+file.add(new JMenuItem("Exit"));
+mb.add(file);
+frame.setJMenuBar(mb);
+```
+Menus provide a **structured, user-friendly interface** for command selection in desktop applications.
+
+---
+
+### Q28. What is Double Buffering? What purpose does it serve?
+
+**Answer:**
+**Double buffering** is a graphical technique used to **prevent flickering** and provide **smooth animation** in GUI applications.  
+In this technique, all drawing operations are first performed on an **off-screen buffer (memory)** instead of drawing directly on the screen.  
+Once drawing is complete, the buffer is quickly copied to the display screen.
+
+**Purpose and Benefits:**
+- Eliminates flickering during frequent screen updates.  
+- Provides smoother and faster rendering of graphics.  
+- Improves overall visual performance in games, animations, and graphics-intensive apps.
+
+**Example Concept:**
+```java
+public void paint(Graphics g) {
+    Image offscreen = createImage(getWidth(), getHeight());
+    Graphics buffer = offscreen.getGraphics();
+    buffer.fillRect(0, 0, getWidth(), getHeight());
+    g.drawImage(offscreen, 0, 0, this);
+}
+```
+
+In summary, double buffering ensures **flicker-free rendering** by managing the drawing process efficiently between memory and display.
+
+---
+
+### Q29. What is an Interface? Explain with an example.
+
+**Answer:**
+An **interface** in Java is a **blueprint of a class** that contains **abstract methods (without body)** and **constants**.  
+It is used to achieve **abstraction** and **multiple inheritance**, defining what a class should do but not how it does it.  
+All methods in an interface are implicitly **public** and **abstract** (unless declared `default` or `static`).
+
+**Syntax:**
+```java
+interface Animal {
+    void sound();
+}
+class Dog implements Animal {
+    public void sound() {
+        System.out.println("Bark");
+    }
+}
+```
+
+**Key Features:**
+- Supports **multiple inheritance** (a class can implement multiple interfaces).  
+- Promotes **loose coupling** between components.  
+- Can include **default** and **static methods** (since Java 8).  
+- Interfaces define a **contract** that implementing classes must follow.
+
+Interfaces are essential for **designing modular, scalable, and testable** Java applications.
+
+---
+
+### Q20. List the three options of handling an event.
+
+**Answer:**
+In Java’s **event-handling mechanism** (based on the **delegation event model**), events are generated by components like buttons or menus and handled by **listeners**.  
+There are **three main ways** to handle an event in Java GUI programming:
+
+1. **Implementing Listener Interface in the Same Class:**  
+   The component’s event-handling code is written in the same class that creates the component.  
+   Example:
+   ```java
+   class MyFrame extends Frame implements ActionListener {
+       public void actionPerformed(ActionEvent e) { ... }
+   }
+   ```
+
+2. **Using Separate Listener Class:**  
+   A distinct class is created solely for handling events, improving code organization and reusability.
+
+3. **Using Anonymous Inner Class:**  
+   A short, inline class is used to handle the event directly where it occurs.  
+   Example:
+   ```java
+   button.addActionListener(new ActionListener() {
+       public void actionPerformed(ActionEvent e) {
+           System.out.println("Button clicked!");
+       }
+   });
+   ```
+
+These methods provide flexibility in structuring event-handling code, balancing **simplicity, modularity, and maintainability**.
+
+---
+
+### Q1. Explain Control Structures in Java with an Example.
+
+**Answer:**
+
+In Java, **Control Structures** are fundamental building blocks that **determine the flow of program execution**.  
+They allow a program to make **decisions**, **repeat operations**, and **control the order** in which statements are executed.  
+Control structures enable programmers to implement **logical decision-making** and **iteration** effectively, enhancing both readability and efficiency.
+
+---
+
+## **Types of Control Structures in Java**
+
+Control structures in Java are broadly classified into three main categories:
+
+---
+
+### **1. Sequential Control Structure**
+- The simplest form of control structure.
+- Statements are executed **in the exact order** in which they appear in the program.
+- There is **no branching or looping** involved.
+
+**Example:**
+```java
+int a = 10;
+int b = 20;
+int sum = a + b;
+System.out.println("Sum = " + sum);
+```
+Here, each statement is executed **sequentially**, from top to bottom.
+
+---
+
+### **2. Selection (Decision-Making) Control Structure**
+These structures allow a program to **choose** between multiple paths of execution based on certain conditions.
+
+#### (a) **if Statement**
+Executes a block of code **only if** a condition is true.
+```java
+if (a > b) {
+    System.out.println("a is greater than b");
+}
+```
+
+#### (b) **if-else Statement**
+Provides two alternative paths: one for **true** and another for **false**.
+```java
+if (a > b) {
+    System.out.println("a is greater");
+} else {
+    System.out.println("b is greater");
+}
+```
+
+#### (c) **if-else-if Ladder**
+Used to test **multiple conditions** sequentially.
+```java
+if (marks >= 90)
+    grade = "A";
+else if (marks >= 75)
+    grade = "B";
+else if (marks >= 50)
+    grade = "C";
+else
+    grade = "Fail";
+```
+
+#### (d) **Nested if Statement**
+An **if statement inside another if**.
+```java
+if (a > 0) {
+    if (b > 0)
+        System.out.println("Both numbers are positive");
+}
+```
+
+#### (e) **switch Statement**
+Used when multiple conditions depend on a single variable or expression.  
+It improves readability over multiple `if-else` statements.
+```java
+int day = 3;
+switch (day) {
+    case 1: System.out.println("Monday"); break;
+    case 2: System.out.println("Tuesday"); break;
+    case 3: System.out.println("Wednesday"); break;
+    default: System.out.println("Invalid day");
+}
+```
+**Note:** From Java 14 onward, enhanced `switch` expressions allow returning values directly.
+
+---
+
+### **3. Iteration (Looping) Control Structure**
+Loops allow a block of code to **repeat multiple times** until a condition becomes false.
+
+#### (a) **for Loop**
+Used when the number of iterations is known in advance.
+```java
+for (int i = 1; i <= 5; i++) {
+    System.out.println("Count: " + i);
+}
+```
+
+#### (b) **while Loop**
+Used when the number of iterations is **not known** beforehand.  
+The condition is checked **before** entering the loop.
+```java
+int i = 1;
+while (i <= 5) {
+    System.out.println("Hello");
+    i++;
+}
+```
+
+#### (c) **do-while Loop**
+Similar to the `while` loop, but checks the condition **after** the loop body executes.  
+Ensures that the loop executes at least once.
+```java
+int i = 1;
+do {
+    System.out.println("Number: " + i);
+    i++;
+} while (i <= 5);
+```
+
+#### (d) **Enhanced for Loop (for-each Loop)**
+Introduced in Java 5 to iterate over arrays or collections.
+```java
+int[] nums = {1, 2, 3, 4, 5};
+for (int n : nums) {
+    System.out.println(n);
+}
+```
+
+---
+
+### **4. Jump (Branching) Control Statements**
+These are used to **alter the normal sequence** of program execution.
+
+1. **break:** Exits a loop or switch prematurely.  
+   ```java
+   for (int i = 1; i <= 10; i++) {
+       if (i == 5) break;
+       System.out.println(i);
+   }
+   ```
+
+2. **continue:** Skips the current iteration and moves to the next one.  
+   ```java
+   for (int i = 1; i <= 5; i++) {
+       if (i == 3) continue;
+       System.out.println(i);
+   }
+   ```
+
+3. **return:** Exits from a method and optionally returns a value.
+
+---
+
+### **Real-Life Example: Combining Control Structures**
+```java
+public class ControlDemo {
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40, 50};
+        int sum = 0;
+
+        for (int num : numbers) {
+            if (num == 30)
+                continue; // skip 30
+            sum += num;
+        }
+
+        if (sum > 100)
+            System.out.println("Sum is large: " + sum);
+        else
+            System.out.println("Sum is small: " + sum);
+    }
+}
+```
+**Output:**  
+`Sum is large: 120`
+
+---
+
+### **Advantages of Using Control Structures**
+- Improve **program logic and readability**.  
+- Allow **decision-based execution** and **code reusability**.  
+- Reduce redundant code by **automating repetitive tasks**.  
+- Form the **foundation for algorithms and flow control** in software development.
+
+---
+
+### **Summary Table:**
+
+| Type | Description | Example |
+|------|--------------|----------|
+| Sequential | Executes line by line | `int x = 10; System.out.println(x);` |
+| Selection | Chooses a path | `if`, `if-else`, `switch` |
+| Iteration | Repeats code | `for`, `while`, `do-while` |
+| Jump | Alters flow | `break`, `continue`, `return` |
+
+---
+
+**In summary:**  
+Control structures are the **core of Java programming logic**, allowing developers to build intelligent, flexible, and efficient applications by controlling how and when different parts of a program execute.
+
+
+ ---
+
+ 
+
+
+
 
 
 
