@@ -1422,7 +1422,158 @@ public class WriterExample {
 - Using **buffered streams/writers** improves efficiency for large data.  
 - Mastery of these methods is **essential for file I/O operations in Java**.
 
+---
 
+### Q6. What are the Salient Features of Java? Explain Each Feature
+
+**Answer:**
+
+Java is a **high-level, object-oriented programming language** developed by **Sun Microsystems** in 1995.  
+It is widely used for **desktop applications, web applications, mobile apps, and enterprise solutions**.  
+Java is popular because of its **robustness, portability, and security features**.
+
+---
+
+## **Salient Features of Java**
+
+### **1. Simple**
+- Java is **easy to learn and use**.  
+- Its syntax is similar to **C/C++**, but it eliminates complex features like **pointers, operator overloading, and multiple inheritance with classes**, making it simpler and less error-prone.  
+
+**Example:**  
+No need to manually manage memory like C/C++ (`malloc`/`free`).
+
+---
+
+### **2. Object-Oriented**
+- Java is a **pure object-oriented language** (except primitive types).  
+- Supports **classes, objects, inheritance, polymorphism, abstraction, and encapsulation**.  
+- Object-oriented approach makes programs **modular, reusable, and maintainable**.
+
+**Example:**  
+```java
+class Student { String name; int age; }
+Student s = new Student();
+```
+
+---
+
+### **3. Platform-Independent**
+- Java follows the principle: **“Write Once, Run Anywhere” (WORA)**.  
+- Java code is compiled into **bytecode** by the **Java compiler**, which can run on **any platform** with a **Java Virtual Machine (JVM)**.  
+
+**Example:**  
+`javac Hello.java → Hello.class → java Hello` runs on Windows, Linux, or macOS.
+
+---
+
+### **4. Robust**
+- Java provides **strong memory management** using **garbage collection**.  
+- Eliminates pointers and provides **exception handling**, making it less prone to **runtime errors**.  
+- Encourages **type checking** at compile time.
+
+**Example:**  
+```java
+try { int a = 5/0; } catch(ArithmeticException e) { System.out.println("Error!"); }
+```
+
+---
+
+### **5. Secure**
+- Java provides a **secure execution environment**.  
+- Runs inside a **sandbox (JVM)**, preventing unauthorized access to system resources.  
+- Supports **bytecode verification, cryptography, and secure class loading**.  
+
+**Example:**  
+No direct access to memory like in C/C++ reduces risk of viruses or memory corruption.
+
+---
+
+### **6. Portable**
+- Java programs are **independent of hardware and operating system**.  
+- Relies on **standard libraries** and **bytecode**, making it highly portable across platforms.  
+
+**Example:**  
+Same `.class` file can run on Windows, Linux, macOS without modification.
+
+---
+
+### **7. High Performance**
+- Although interpreted, Java achieves **high performance** using **Just-In-Time (JIT) compiler**.  
+- Converts bytecode into native machine code at runtime for faster execution.  
+
+**Example:**  
+```java
+System.out.println("Performance optimized via JIT compiler");
+```
+
+---
+
+### **8. Multithreaded**
+- Java supports **multithreading**, allowing multiple tasks to run concurrently.  
+- Threads share memory and resources efficiently, improving **CPU utilization**.  
+- Built-in classes like `Thread` and `Runnable` simplify thread management.
+
+**Example:**  
+```java
+class MyThread extends Thread { public void run() { System.out.println("Thread running"); } }
+```
+
+---
+
+### **9. Distributed**
+- Java provides **built-in support for networking** and distributed computing.  
+- Classes like `URL`, `Socket`, and `HttpURLConnection` allow Java programs to **connect over networks** easily.
+
+**Example:**  
+```java
+URL url = new URL("http://www.example.com");
+BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
+```
+
+---
+
+### **10. Architecture-Neutral**
+- Java bytecode is **not dependent on processor or OS architecture**.  
+- Ensures **portability and consistent behavior** across platforms.
+
+---
+
+### **11. Dynamic**
+- Java programs can **adapt to an evolving environment**.  
+- Supports **dynamic loading of classes, runtime binding, and reflection**.
+
+---
+
+### **12. Interpreted**
+- Java bytecode is **interpreted by JVM**, enabling **cross-platform execution**.  
+- Provides **easy debugging and platform independence**.
+
+---
+
+### **Summary Table:**
+
+| Feature | Description |
+|---------|-------------|
+| Simple | Easy syntax, eliminates complex features |
+| Object-Oriented | Supports classes, objects, encapsulation, inheritance |
+| Platform-Independent | WORA: Run bytecode on any JVM |
+| Robust | Strong memory management and exception handling |
+| Secure | Safe execution environment and sandboxing |
+| Portable | Works across OS and hardware |
+| High Performance | JIT compiler for faster execution |
+| Multithreaded | Supports concurrent execution |
+| Distributed | Built-in networking support |
+| Architecture-Neutral | Bytecode independent of hardware |
+| Dynamic | Supports dynamic class loading and runtime linking |
+| Interpreted | JVM interprets bytecode for execution |
+
+---
+
+**Conclusion:**
+
+Java’s **salient features** make it a **versatile, secure, and portable programming language** suitable for a wide range of applications, from **desktop software** to **enterprise systems** and **mobile apps**.  
+Its combination of **simplicity, robustness, and platform independence** is the reason for its **global popularity** among developers.
 
 
 
