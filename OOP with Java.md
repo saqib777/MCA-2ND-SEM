@@ -3058,7 +3058,9 @@ Understanding Swing panes like the **Glass Pane**, **Layered Pane**, and **Conte
 
 ---
 
-### 15 Marks
+### **15 Marks**
+
+🏛️ Q1. What are the Different Forms of Inheritance? Does Java Support All of Them?
 
 ### **Introduction to Inheritance**
 
@@ -3332,6 +3334,241 @@ Java supports **single**, **multilevel**, and **hierarchical inheritance** throu
 
 This controlled and flexible approach ensures **clarity**, **safety**, and **maintainability** in object-oriented programming.
 
+---
+
+🏛️ Q2. Explain the Usage of try and catch Clause with an Example
+
+### **Introduction**
+
+In Java, **exception handling** is a mechanism that allows a programmer to handle runtime errors, maintain the normal flow of the program, and prevent abnormal termination.
+
+The **`try`** and **`catch`** blocks are the most fundamental parts of Java’s exception handling mechanism, which together handle exceptional conditions during program execution.
+
+The keywords used in Java exception handling are:
+- `try`
+- `catch`
+- `throw`
+- `throws`
+- `finally`
+
+---
+
+### **Purpose of `try` and `catch`**
+
+- The **`try` block** contains code that **might throw an exception**.  
+- The **`catch` block** is used to **handle the exception** that occurs in the `try` block.
+
+---
+
+### **Syntax**
+
+```java
+try {
+    // code that might throw an exception
+}
+catch (ExceptionType e) {
+    // code to handle the exception
+}
+```
+
+**Explanation:**
+- The `try` block encloses the code that could throw an exception.
+- The `catch` block catches the exception and handles it.
+- The parameter inside the `catch` block (e.g., `ExceptionType e`) is an **object** of the exception class that was thrown.
+
+---
+
+### **Example 1: Basic Usage of try and catch**
+
+```java
+public class TryCatchExample {
+    public static void main(String[] args) {
+        try {
+            int num = 50 / 0; // ArithmeticException
+            System.out.println("Result: " + num);
+        } 
+        catch (ArithmeticException e) {
+            System.out.println("Error: Cannot divide by zero.");
+        }
+
+        System.out.println("Program continues after handling exception.");
+    }
+}
+```
+
+**Output:**
+```
+Error: Cannot divide by zero.
+Program continues after handling exception.
+```
+
+**Explanation:**
+1. The code inside the `try` block attempts to divide 50 by 0.
+2. This operation causes an **ArithmeticException**.
+3. Control is transferred to the **`catch` block**, which handles the exception gracefully.
+4. The program continues normally after the exception is handled.
+
+Without exception handling, the program would terminate abnormally with an error message.
+
+---
+
+### **Example 2: Using Multiple catch Blocks**
+
+When multiple types of exceptions can occur, you can use multiple `catch` blocks to handle each one separately.
+
+```java
+public class MultipleCatchExample {
+    public static void main(String[] args) {
+        try {
+            int[] arr = new int[3];
+            arr[5] = 30 / 0; // ArithmeticException and ArrayIndexOutOfBoundsException
+        } 
+        catch (ArithmeticException e) {
+            System.out.println("Error: Division by zero.");
+        }
+        catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: Array index out of bounds.");
+        }
+        catch (Exception e) {
+            System.out.println("General Exception: " + e.getMessage());
+        }
+
+        System.out.println("Program executed successfully.");
+    }
+}
+```
+
+**Output:**
+```
+Error: Division by zero.
+Program executed successfully.
+```
+
+**Explanation:**
+- The statement `arr[5] = 30 / 0;` first throws an **ArithmeticException** (division by zero).
+- The `catch (ArithmeticException e)` block handles it.
+- If an exception doesn’t match any specific `catch`, the **generic `catch (Exception e)`** will handle it.
+
+---
+
+### **Example 3: Nested try-catch Blocks**
+
+Sometimes, you may need **nested try-catch blocks** when a part of a code inside a try block also needs exception handling.
+
+```java
+public class NestedTryExample {
+    public static void main(String[] args) {
+        try {
+            int a = 10;
+            int b = 2;
+            int result = a / b;
+            System.out.println("Result: " + result);
+
+            try {
+                int[] arr = new int[2];
+                arr[5] = 50; // ArrayIndexOutOfBoundsException
+            }
+            catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Inner Catch: Array index out of bounds.");
+            }
+        }
+        catch (ArithmeticException e) {
+            System.out.println("Outer Catch: Division by zero.");
+        }
+
+        System.out.println("End of program.");
+    }
+}
+```
+
+**Output:**
+```
+Result: 5
+Inner Catch: Array index out of bounds.
+End of program.
+```
+
+**Explanation:**
+- The **outer try** handles arithmetic errors.
+- The **inner try** handles array-related errors.
+- This structure allows for more specific error management.
+
+---
+
+### **Rules for try-catch in Java**
+
+1. A `try` block **must** be followed by at least one `catch` or a `finally` block.
+   ```java
+   try {
+       // risky code
+   } catch(Exception e) {
+       // handling code
+   }
+   ```
+   or  
+   ```java
+   try {
+       // risky code
+   } finally {
+       // cleanup code
+   }
+   ```
+
+2. Multiple `catch` blocks can be used to handle **different exception types**.
+3. Catch blocks are checked **top to bottom** — the first matching one executes.
+4. If no `catch` matches, the program terminates abnormally unless the exception is caught higher up in the call stack.
+5. `try` and `catch` cannot be used alone — they must appear together.
+
+---
+
+### **Flow of Execution**
+
+1. Control enters the `try` block.
+2. If no exception occurs → all statements in `try` execute → `catch` is skipped.
+3. If an exception occurs → remaining statements in `try` are skipped.
+4. The first matching `catch` block executes.
+5. Program continues normally after exception handling.
+
+---
+
+### **Diagram**
+
+```
+         ┌───────────────┐
+         │   try block   │
+         └──────┬────────┘
+                │ Exception occurs?
+                │
+     ┌──────────┴───────────┐
+     │                      │
+ No Exception           Exception Thrown
+     │                      │
+ Continue Normally     Go to Matching catch
+     │                      │
+     └──────────────►  Exception Handled
+                            │
+                            ▼
+                 Program Continues Normally
+```
+
+---
+
+### **Advantages of Using try and catch**
+
+1. **Prevents abnormal termination** of programs.
+2. **Improves readability** and **maintainability** of code.
+3. Allows **separate handling** for different types of exceptions.
+4. Helps in **debugging and logging** errors efficiently.
+5. Maintains **program flow** after an error occurs.
+
+---
+
+### **Conclusion**
+
+The `try` and `catch` clauses in Java provide a **structured, reliable mechanism** to handle runtime errors.  
+They make programs **robust**, **user-friendly**, and **less error-prone** by gracefully managing exceptional situations rather than crashing.
+
+Hence, `try-catch` is an essential tool for **stable and professional Java programming**.
 
 
 
