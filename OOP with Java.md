@@ -2566,5 +2566,168 @@ Containers in Java are essential for building structured and interactive GUI app
 Whether using **AWT** or **Swing**, understanding containers is crucial for creating professional user interfaces.
 
 
+---
+
+### **Frames in Java**
+
+A **Frame** in Java is a **top-level container** used to create **standalone Graphical User Interface (GUI)** applications. It is part of the **Abstract Window Toolkit (AWT)** and serves as the **main window** where other GUI components (like buttons, labels, text fields) can be placed.
+
+The `Frame` class in Java is defined in the package:
+```java
+java.awt.Frame
+```
+
+A Frame provides a **title bar**, **menu bar**, **borders**, and **buttons** (minimize, maximize, close). It can act as the main application window for an AWT-based program.
+
+---
+
+### **Hierarchy of Frame**
+In Java AWT, `Frame` is a subclass of `Window`, which in turn is a subclass of `Container`, and ultimately a subclass of `Component`.
+
+```
+java.lang.Object  
+   ↳ java.awt.Component  
+        ↳ java.awt.Container  
+             ↳ java.awt.Window  
+                  ↳ java.awt.Frame
+```
+
+This hierarchy shows that `Frame` inherits all properties and methods of these classes.
+
+---
+
+### **Constructors of Frame Class**
+The `Frame` class provides several constructors:
+
+1. `Frame()`  
+   → Creates a frame without a title.  
+2. `Frame(String title)`  
+   → Creates a frame with the specified title.
+
+Example:
+```java
+Frame f = new Frame("My First Frame");
+```
+
+---
+
+### **Commonly Used Methods**
+| **Method** | **Description** |
+|-------------|----------------|
+| `setSize(int width, int height)` | Sets the dimensions of the frame. |
+| `setTitle(String title)` | Sets the title of the frame. |
+| `setVisible(boolean b)` | Makes the frame visible or invisible. |
+| `setLayout(LayoutManager lm)` | Sets the layout for components. |
+| `add(Component c)` | Adds a component to the frame. |
+| `setBackground(Color c)` | Sets the background color of the frame. |
+| `setForeground(Color c)` | Sets the text color for the frame. |
+| `dispose()` | Releases all resources used by the frame. |
+
+---
+
+### **Creating a Frame – Example**
+Below is a simple example of creating and displaying a frame using AWT:
+
+```java
+import java.awt.*;
+
+public class FrameExample {
+    public static void main(String[] args) {
+        // Create a frame with title
+        Frame f = new Frame("Frame Example");
+
+        // Set size and layout
+        f.setSize(400, 300);
+        f.setLayout(new FlowLayout());
+
+        // Create a label and button
+        Label l = new Label("Welcome to AWT Frame!");
+        Button b = new Button("Click Me");
+
+        // Add components to the frame
+        f.add(l);
+        f.add(b);
+
+        // Make frame visible
+        f.setVisible(true);
+    }
+}
+```
+
+**Output:**  
+A window (Frame) appears with a label saying *“Welcome to AWT Frame!”* and a button labeled *“Click Me”*.
+
+---
+
+### **Handling Frame Closing**
+By default, closing the frame does not stop the program. We must explicitly handle the close operation using a **WindowListener**.
+
+Example:
+```java
+import java.awt.*;
+import java.awt.event.*;
+
+public class CloseFrameExample {
+    public static void main(String[] args) {
+        Frame f = new Frame("Closing Example");
+        f.setSize(300, 200);
+        f.setLayout(new FlowLayout());
+        f.add(new Label("Close the window to exit"));
+
+        // Add window listener
+        f.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                f.dispose(); // Release resources
+                System.exit(0); // Exit program
+            }
+        });
+
+        f.setVisible(true);
+    }
+}
+```
+
+---
+
+### **Frame in Swing (JFrame)**
+In Swing, the `JFrame` class (in `javax.swing` package) is used instead of AWT’s `Frame`.  
+It provides more flexibility and supports features like look-and-feel, tooltips, and lightweight components.
+
+Example:
+```java
+import javax.swing.*;
+
+public class JFrameExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Swing Frame Example");
+        JButton button = new JButton("Click Me");
+
+        frame.add(button);
+        frame.setSize(400, 300);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+}
+```
+
+---
+
+### **Advantages of Using Frames**
+- Can contain and manage multiple GUI components.
+- Can handle events such as mouse clicks, window closing, and key presses.
+- Can use layout managers for flexible component arrangement.
+- Easily customizable (title, color, menu bar, etc.).
+
+---
+
+### **Conclusion**
+A **Frame** serves as the **foundation of GUI applications in Java**.  
+It provides a window on which all other components are displayed.  
+By understanding the properties and event handling of frames, developers can build rich and interactive graphical interfaces using AWT or Swing.
+
+---
+
+
+
 
 
