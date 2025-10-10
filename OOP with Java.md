@@ -2318,6 +2318,252 @@ public class DeleteFileExample {
 - Proper use of **try-with-resources** ensures files are **safely closed** and resources are released automatically.  
 - Mastery of file operations is essential for **data storage, logging, and file-based applications**.
 
+---
+
+### Q20. What is StringBuffer? How Does It Differ from String?
+
+**Answer:**
+
+In Java, strings are one of the most frequently used objects.  
+While the **String** class provides **immutable strings**, the **StringBuffer** class provides **mutable strings** — that is, strings that can be modified after creation.
+
+---
+
+## **1. String in Java**
+
+A **String** in Java is an **immutable sequence of characters**.  
+Once a String object is created, **its contents cannot be changed**.  
+Any modification (like concatenation or replacement) creates a **new object** in memory.
+
+**Example:**
+```java
+String s1 = "Hello";
+s1 = s1 + " World";  // Creates a new object
+System.out.println(s1);
+```
+
+**Explanation:**
+- The original `"Hello"` string remains unchanged.  
+- A new object `"Hello World"` is created in the string pool.  
+- Immutability improves **security and performance** in multithreaded environments.
+
+---
+
+## **2. StringBuffer in Java**
+
+The **StringBuffer** class is used to **create mutable strings**, meaning their content **can be modified** without creating new objects.  
+It is part of the `java.lang` package.
+
+**Key Points:**
+- StringBuffer objects are **mutable** (modifiable).  
+- It is **synchronized**, hence **thread-safe** (safe for multithreaded programs).  
+- Commonly used when frequent **modifications or concatenations** of strings are needed.
+
+**Syntax:**
+```java
+StringBuffer sb = new StringBuffer("Hello");
+```
+
+---
+
+## **3. Common Methods of StringBuffer**
+
+| Method | Description | Example |
+|---------|--------------|----------|
+| `append(String str)` | Adds text to the end of the string | `sb.append(" Java");` |
+| `insert(int offset, String str)` | Inserts text at a specific position | `sb.insert(5, " World");` |
+| `replace(int start, int end, String str)` | Replaces characters between given indexes | `sb.replace(0, 5, "Hi");` |
+| `delete(int start, int end)` | Deletes characters in a range | `sb.delete(3, 7);` |
+| `reverse()` | Reverses the entire string | `sb.reverse();` |
+| `toString()` | Converts StringBuffer to String | `String s = sb.toString();` |
+
+---
+
+### **Example Program**
+
+```java
+public class StringBufferExample {
+    public static void main(String[] args) {
+        StringBuffer sb = new StringBuffer("Java");
+        
+        sb.append(" Programming");       // Add text
+        sb.insert(4, " Language");       // Insert text
+        sb.replace(0, 4, "Advanced");    // Replace text
+        sb.delete(0, 9);                 // Delete first word
+        sb.reverse();                    // Reverse string
+
+        System.out.println("Final StringBuffer: " + sb);
+    }
+}
+```
+
+**Output:**
+```
+Final StringBuffer: gnimmargorP egaugnaL
+```
+
+**Explanation:**
+- The same `StringBuffer` object is modified multiple times without creating new objects.  
+- This makes it **memory efficient** for operations involving frequent updates.
+
+---
+
+## **4. Difference Between String and StringBuffer**
+
+| Feature | String | StringBuffer |
+|----------|---------|--------------|
+| Mutability | Immutable | Mutable |
+| Memory Efficiency | Less efficient for modifications | More efficient for frequent updates |
+| Thread Safety | Not thread-safe | Thread-safe (synchronized) |
+| Performance | Faster for read-only operations | Faster for modification-heavy operations |
+| Storage | Stored in String Constant Pool | Stored in Heap memory |
+| Example | `"Java" + "World"` creates new object | `sb.append("World")` modifies existing one |
+
+---
+
+## **5. StringBuilder (Modern Alternative)**
+
+Java also provides **StringBuilder**, which is similar to StringBuffer but **non-synchronized** and therefore **faster** for single-threaded programs.
+
+```java
+StringBuilder sb = new StringBuilder("Fast");
+sb.append(" Builder");
+System.out.println(sb);
+```
+
+---
+
+### **Conclusion:**
+
+- **String** → Immutable sequence of characters.  
+- **StringBuffer** → Mutable, thread-safe string that can be modified efficiently.  
+- When frequent string changes are required (like in loops or text editing applications), **StringBuffer** or **StringBuilder** is preferred over String for **better performance and memory management**.
+
+---
+### **Containers in Java**
+
+In Java, **containers** are objects that hold and organize GUI components like buttons, text fields, labels, and panels. They are part of the **Abstract Window Toolkit (AWT)** and **Swing** frameworks, which provide the foundation for building graphical user interfaces (GUIs).
+
+A container acts as a **holder** or **parent component** that manages the layout, size, and behavior of other GUI components. It provides methods to add, remove, and arrange components.
+
+---
+
+### **Types of Containers in Java**
+
+Java provides several types of containers, broadly classified into two categories:
+
+#### **1. Top-Level Containers**
+These containers exist independently and are not contained within any other container.  
+Examples:
+- **Frame**
+- **Dialog**
+- **Applet**
+- **Window**
+
+**a. Frame**  
+A `Frame` is a top-level container with a title bar, menu bar, and borders. It is used for creating standalone GUI applications.  
+Example:
+```java
+Frame f = new Frame("My Frame");
+f.setSize(400, 300);
+f.setVisible(true);
+```
+
+**b. Dialog**  
+A `Dialog` is a pop-up window used to display messages or accept user input temporarily.
+
+**c. Applet**  
+An `Applet` is a container that runs within a browser or applet viewer, primarily used for small, interactive web applications.
+
+---
+
+#### **2. Intermediate or Lightweight Containers**
+These containers exist **inside top-level containers** and are used to group related components logically.
+
+Examples:
+- **Panel**
+- **ScrollPane**
+- **Canvas**
+
+**a. Panel**  
+A `Panel` is a simple container used to organize components within a frame. It does not have its own title bar or borders.
+```java
+Panel p = new Panel();
+p.add(new Button("Click Me"));
+```
+
+**b. ScrollPane**  
+A `ScrollPane` provides a scrollable view of components that exceed the visible area.
+
+**c. Canvas**  
+Used for custom drawing and rendering graphics.
+
+---
+
+#### **3. Swing Containers**
+Swing provides enhanced, lightweight versions of AWT containers. Examples include:
+- **JFrame**
+- **JPanel**
+- **JDialog**
+- **JApplet**
+
+Example:
+```java
+JFrame frame = new JFrame("Swing Container Example");
+JPanel panel = new JPanel();
+panel.add(new JButton("Press"));
+frame.add(panel);
+frame.setSize(300, 200);
+frame.setVisible(true);
+```
+
+---
+
+### **Container Hierarchy**
+In Java GUI, containers form a hierarchy known as a **component tree**.  
+For example:
+```
+JFrame
+ └── JPanel
+      ├── JButton
+      └── JLabel
+```
+
+This structure ensures proper layout management and event handling.
+
+---
+
+### **Methods of the Container Class**
+Common methods include:
+- `add(Component c)` – Adds a component to the container.
+- `remove(Component c)` – Removes a component.
+- `setLayout(LayoutManager lm)` – Sets the layout manager.
+- `getComponents()` – Returns an array of all components in the container.
+
+---
+
+### **Layout Managers**
+Containers use layout managers to organize components:
+- `FlowLayout`
+- `BorderLayout`
+- `GridLayout`
+- `CardLayout`
+
+Example:
+```java
+Frame f = new Frame("Layout Example");
+f.setLayout(new FlowLayout());
+f.add(new Button("One"));
+f.add(new Button("Two"));
+f.add(new Button("Three"));
+f.setVisible(true);
+```
+
+---
+
+### **Conclusion**
+Containers in Java are essential for building structured and interactive GUI applications. They form the **foundation of the component hierarchy**, allowing components to be organized, displayed, and managed effectively.  
+Whether using **AWT** or **Swing**, understanding containers is crucial for creating professional user interfaces.
 
 
 
