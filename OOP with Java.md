@@ -2883,6 +2883,178 @@ Understanding JRootPane is essential for developers who want to customize window
 
 ---
 
+### **Introduction to Swing**
+
+**Swing** is a **GUI (Graphical User Interface) toolkit** for Java that is part of the **Java Foundation Classes (JFC)**.  
+It is built on top of **Abstract Window Toolkit (AWT)** and provides a **richer set of components** for building **desktop applications**.  
+
+Swing was introduced to overcome AWT’s limitations, such as **platform dependence** and **limited component set**.  
+It provides **lightweight**, **platform-independent**, and **customizable** GUI components.
+
+Swing classes are contained in the **`javax.swing`** package.
+
+---
+
+### **What is Swing?**
+
+Swing is a **set of classes** for creating **window-based applications** in Java.  
+It provides:
+- Rich GUI controls (buttons, tables, trees, lists, text boxes, menus, etc.)
+- Support for **pluggable look and feel**.
+- More flexibility and control over design compared to AWT.
+
+---
+
+### **Example of a Simple Swing Application**
+
+```java
+import javax.swing.*;
+
+public class SwingExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Swing Example");
+
+        JButton button = new JButton("Click Me");
+        JLabel label = new JLabel("Welcome to Swing!");
+
+        frame.add(label);
+        frame.add(button);
+
+        frame.setLayout(new java.awt.FlowLayout());
+        frame.setSize(300, 200);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+}
+```
+
+This program creates a simple Swing window with a label and button.
+
+---
+
+### **Main Features of Swing**
+
+1. **Lightweight Components**  
+   Swing components do not depend on the native (OS) system for rendering; they are written completely in Java.
+
+2. **Platform Independent**  
+   Swing runs the same way on all platforms — Windows, macOS, Linux — without code modification.
+
+3. **Pluggable Look and Feel (PLAF)**  
+   The appearance of Swing components can be changed at runtime to mimic Windows, Mac, or Metal themes.
+
+4. **MVC Architecture (Model-View-Controller)**  
+   Swing uses the MVC pattern that separates data (Model), UI (View), and user interaction (Controller).
+
+5. **Highly Customizable**  
+   Developers can easily modify colors, borders, icons, fonts, and behaviors of components.
+
+6. **Rich Set of Components**  
+   Swing provides components like `JTable`, `JTree`, `JTabbedPane`, `JToolBar`, and many others not available in AWT.
+
+7. **Double Buffering for Smooth Graphics**  
+   Swing uses double buffering to reduce flickering and improve performance when rendering complex interfaces.
+
+8. **Event-Driven Programming**  
+   Swing supports event handling similar to AWT, using listeners for buttons, menus, and other controls.
+
+---
+
+### **Swing Component Hierarchy**
+At the top level, all Swing components extend from:
+```
+java.lang.Object
+   ↳ java.awt.Component
+        ↳ java.awt.Container
+             ↳ javax.swing.JComponent
+```
+
+---
+
+### **Different Types of Panes in Swing Containers**
+
+A **Swing container** such as `JFrame`, `JDialog`, or `JApplet` internally contains a **JRootPane**, which manages different layers called **panes**.
+
+#### **1. Glass Pane**
+- The **topmost layer** in the Swing container.
+- Invisible by default.
+- Can intercept mouse or keyboard events.
+- Used for **custom painting**, **animations**, or **temporary overlays** (like drag visuals).
+
+Example:
+```java
+JPanel glass = (JPanel) frame.getGlassPane();
+glass.setVisible(true);
+```
+
+---
+
+#### **2. Layered Pane**
+- Manages the **z-order (depth)** of components.
+- Allows components to **overlap** each other.
+- Components can be placed on predefined layers like:
+  - `DEFAULT_LAYER`
+  - `PALETTE_LAYER`
+  - `MODAL_LAYER`
+  - `POPUP_LAYER`
+  - `DRAG_LAYER`
+
+Example:
+```java
+JLayeredPane layeredPane = frame.getLayeredPane();
+```
+
+---
+
+#### **3. Content Pane**
+- The **main area** where all visible GUI components (buttons, labels, panels) are added.
+- You can access it using:
+  ```java
+  frame.getContentPane().add(new JButton("Click"));
+  ```
+- Without a content pane, no visible components can be added to a frame.
+
+---
+
+#### **4. Menu Bar Pane**
+- Holds the `JMenuBar` for the top-level container.
+- Used for adding menus like *File*, *Edit*, *Help*, etc.
+- Example:
+  ```java
+  JMenuBar menuBar = new JMenuBar();
+  frame.setJMenuBar(menuBar);
+  ```
+
+---
+
+### **Visual Representation of Swing Container Structure**
+
+```
+JFrame
+ └── JRootPane
+      ├── Glass Pane
+      ├── Layered Pane
+      │     └── Content Pane
+      │           └── GUI Components (Buttons, Labels, Panels)
+      └── Menu Bar (optional)
+```
+
+---
+
+### **Advantages of Swing Over AWT**
+| **AWT** | **Swing** |
+|----------|------------|
+| Uses native OS components (heavyweight). | Fully implemented in Java (lightweight). |
+| Limited number of components. | Large variety of advanced components. |
+| Platform-dependent look and feel. | Pluggable look and feel. |
+| Slower customization. | Easier to customize and extend. |
+
+---
+
+### **Conclusion**
+Swing is a **powerful, flexible, and platform-independent** GUI toolkit that extends AWT’s capabilities.  
+Its **lightweight architecture**, **pluggable look and feel**, and **multi-pane structure** make it ideal for developing rich desktop applications.  
+Understanding Swing panes like the **Glass Pane**, **Layered Pane**, and **Content Pane** is key to mastering Swing’s internal structure.
 
 
 
