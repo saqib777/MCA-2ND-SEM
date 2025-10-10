@@ -2727,6 +2727,163 @@ By understanding the properties and event handling of frames, developers can bui
 
 ---
 
+### **JRootPane in Java**
+
+In Java’s Swing framework, a **`JRootPane`** is a **top-level container** that serves as the **foundation for Swing components like `JFrame`, `JDialog`, `JApplet`, and `JWindow`**.  
+It acts as an **intermediate container** that manages the fundamental parts of a Swing window, such as the **content pane**, **menu bar**, and **optional glass pane**.
+
+Every top-level Swing container (like a JFrame) **automatically creates a JRootPane** to manage its internal structure.
+
+---
+
+### **Hierarchy of JRootPane**
+```
+java.lang.Object
+   ↳ java.awt.Component
+        ↳ java.awt.Container
+             ↳ javax.swing.JComponent
+                  ↳ javax.swing.JRootPane
+```
+
+---
+
+### **Structure of a JRootPane**
+A `JRootPane` contains **four major panes**, each serving a specific purpose:
+
+1. **Glass Pane**
+   - It sits at the **top** of all panes.
+   - It is **invisible by default** but can be used for drawing custom graphics or intercepting input events (like mouse or key events).
+   - Example use: creating custom drag effects, tooltips, or overlays.
+
+2. **Layered Pane**
+   - Holds components in **different layers**, allowing components to overlap each other.
+   - Layers like `DEFAULT_LAYER`, `PALETTE_LAYER`, and `MODAL_LAYER` control the **z-order** (stacking order) of components.
+   - Example: Popup menus or tooltips appear above normal components because they are placed in a higher layer.
+
+3. **Content Pane**
+   - This is where all **user interface components** (buttons, labels, panels, etc.) are added.
+   - You typically add components using:
+     ```java
+     frame.getContentPane().add(component);
+     ```
+     or directly:
+     ```java
+     frame.add(component);
+     ```
+     (which internally adds it to the content pane).
+
+4. **Menu Bar**
+   - The `JMenuBar` object, if any, is added at the top of the root pane.
+   - Used to create application menus like *File*, *Edit*, *Help*, etc.
+
+---
+
+### **Internal Structure Diagram**
+
+```
+JRootPane
+ ├── Glass Pane
+ ├── Layered Pane
+ │    └── Content Pane
+ │         └── Components (Buttons, Labels, etc.)
+ └── Menu Bar
+```
+
+---
+
+### **Constructors**
+The `JRootPane` class has a simple constructor:
+```java
+JRootPane rootPane = new JRootPane();
+```
+
+---
+
+### **Commonly Used Methods**
+| **Method** | **Description** |
+|-------------|----------------|
+| `getContentPane()` | Returns the content pane where components are added. |
+| `setContentPane(Container c)` | Replaces the existing content pane. |
+| `getGlassPane()` | Returns the glass pane for custom painting. |
+| `setGlassPane(Component c)` | Replaces the glass pane. |
+| `getLayeredPane()` | Returns the layered pane. |
+| `setLayeredPane(JLayeredPane lp)` | Sets a new layered pane. |
+| `setJMenuBar(JMenuBar menu)` | Sets the menu bar for the root pane. |
+| `getJMenuBar()` | Returns the menu bar. |
+
+---
+
+### **Example: Using JRootPane in a JFrame**
+
+```java
+import javax.swing.*;
+import java.awt.*;
+
+public class JRootPaneExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("JRootPane Example");
+
+        // Access the JRootPane of JFrame
+        JRootPane rootPane = frame.getRootPane();
+
+        // Create a panel and add components
+        JPanel panel = new JPanel();
+        panel.add(new JLabel("Welcome to JRootPane Example"));
+        panel.add(new JButton("Click Me"));
+
+        // Set the panel as content pane
+        rootPane.setContentPane(panel);
+
+        // Add a simple menu bar
+        JMenuBar menuBar = new JMenuBar();
+        JMenu fileMenu = new JMenu("File");
+        menuBar.add(fileMenu);
+        rootPane.setJMenuBar(menuBar);
+
+        // Frame settings
+        frame.setSize(400, 200);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+}
+```
+
+---
+
+### **Use Cases of JRootPane**
+
+1. **Organizing GUI Hierarchy**
+   - It manages all key parts (content, layered, and glass panes) of Swing’s top-level containers.
+
+2. **Custom Painting or Overlay**
+   - You can use the glass pane for drawing effects, loading overlays, or animations.
+
+3. **Popup Layering**
+   - The layered pane helps display components such as pop-up dialogs, menus, and tooltips above other components.
+
+4. **Replacing Default Panes**
+   - Developers can replace the content or layered panes for complete customization of window behavior.
+
+---
+
+### **Difference Between JRootPane and JFrame**
+| **JRootPane** | **JFrame** |
+|----------------|-------------|
+| It is an internal container that manages panes. | It is a top-level window container. |
+| Cannot exist independently. | Can exist independently as a window. |
+| Manages glass, layered, content, and menu panes. | Uses JRootPane internally to display content. |
+| Used mostly for customization. | Used for application GUI. |
+
+---
+
+### **Conclusion**
+A **`JRootPane`** is the **core building block** behind every top-level Swing container.  
+It acts as a **manager of internal panes**, ensuring that each window has a well-organized structure for menus, content, and layered components.  
+Understanding JRootPane is essential for developers who want to customize window behavior or create advanced visual effects in Swing applications.
+
+---
+
+
 
 
 
