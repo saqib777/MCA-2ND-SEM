@@ -3570,6 +3570,216 @@ They make programs **robust**, **user-friendly**, and **less error-prone** by gr
 
 Hence, `try-catch` is an essential tool for **stable and professional Java programming**.
 
+---
+
+🏛️ Q3. What is StringBuffer? How does it differ from String?
+
+### **Introduction**
+
+In Java, **String** and **StringBuffer** are both classes used to store and manipulate sequences of characters.  
+However, they differ in **mutability**, **performance**, and **thread safety**.
+
+The `String` class is **immutable**, meaning once created, its value **cannot be changed**, while `StringBuffer` is **mutable**, allowing modifications without creating new objects.
+
+---
+
+### **1. The `String` Class**
+
+The `String` class is part of the `java.lang` package and represents a **sequence of characters** enclosed in double quotes.
+
+#### **Example:**
+```java
+String s1 = "Hello";
+String s2 = "World";
+String s3 = s1 + s2;  // Concatenation creates a new String object
+```
+
+Here, a new `String` object is created each time a modification (like concatenation) happens, because Strings are **immutable**.
+
+#### **Immutability of String:**
+- Once created, a String object’s content cannot be altered.
+- Every modification (concatenation, replace, etc.) results in a **new object** being created in memory.
+  
+**Example:**
+```java
+String s = "Java";
+s.concat(" Programming");
+System.out.println(s);
+```
+
+**Output:**
+```
+Java
+```
+
+Explanation:  
+The original string `s` remains unchanged because the `concat()` method returns a **new String object** which is not assigned back to `s`.
+
+---
+
+### **2. The `StringBuffer` Class**
+
+`StringBuffer` is a class in `java.lang` package designed for creating **mutable (modifiable) strings**.  
+It allows changes to be made directly to the existing object without creating new ones.
+
+#### **Declaration:**
+```java
+StringBuffer sb = new StringBuffer("Hello");
+```
+
+#### **Example:**
+```java
+StringBuffer sb = new StringBuffer("Hello");
+sb.append(" World");
+System.out.println(sb);
+```
+
+**Output:**
+```
+Hello World
+```
+
+Here, the content of `sb` is **modified in place**, unlike `String`.
+
+---
+
+### **3. Commonly Used Methods of StringBuffer**
+
+| **Method** | **Description** | **Example** |
+|-------------|----------------|--------------|
+| `append(String str)` | Appends the given string to the end of the current string | `sb.append(" Java")` |
+| `insert(int offset, String str)` | Inserts a string at the specified position | `sb.insert(5, " Cool")` |
+| `replace(int start, int end, String str)` | Replaces characters from `start` to `end` with another string | `sb.replace(0, 5, "Hi")` |
+| `delete(int start, int end)` | Deletes characters from the specified range | `sb.delete(0, 3)` |
+| `reverse()` | Reverses the sequence of characters | `sb.reverse()` |
+| `capacity()` | Returns the current capacity of the buffer | `sb.capacity()` |
+| `length()` | Returns the current length of the string | `sb.length()` |
+
+---
+
+### **4. Example Program Demonstrating StringBuffer Methods**
+
+```java
+public class StringBufferExample {
+    public static void main(String[] args) {
+        StringBuffer sb = new StringBuffer("Java");
+
+        sb.append(" Programming");           // Appends
+        sb.insert(0, "Learn ");              // Inserts at position 0
+        sb.replace(6, 10, "Python");         // Replaces part of string
+        sb.delete(0, 6);                     // Deletes first 6 characters
+        sb.reverse();                        // Reverses the content
+
+        System.out.println("Final StringBuffer: " + sb);
+    }
+}
+```
+
+**Output:**
+```
+gnimmargorP nohtyP
+```
+
+**Explanation:**
+1. `"Learn Java Programming"`  
+2. `"Learn Python Programming"`  
+3. `"Python Programming"`  
+4. Reversed → `"gnimmargorP nohtyP"`
+
+This demonstrates mutability — all changes occur on the same `StringBuffer` object.
+
+---
+
+### **5. Difference Between String and StringBuffer**
+
+| **Feature** | **String** | **StringBuffer** |
+|--------------|-------------|-------------------|
+| **Mutability** | Immutable | Mutable |
+| **Memory Usage** | Creates new objects for every modification | Modifies the same object |
+| **Performance** | Slower during repeated concatenations (creates new objects each time) | Faster for repeated concatenations |
+| **Thread Safety** | Immutable, so inherently thread-safe | Synchronized, hence thread-safe |
+| **Class Package** | `java.lang.String` | `java.lang.StringBuffer` |
+| **Methods** | `length()`, `concat()`, `substring()`, etc. | `append()`, `insert()`, `replace()`, `reverse()`, etc. |
+| **Usage Scenario** | When string content won’t change often | When frequent string modifications are needed |
+| **Example** | `"Hello" + "World"` | `sb.append("World")` |
+
+---
+
+### **6. Example: Performance Comparison**
+
+```java
+public class PerformanceTest {
+    public static void main(String[] args) {
+        // Using String
+        String str = "Java";
+        long startTime = System.currentTimeMillis();
+        for (int i = 0; i < 10000; i++) {
+            str = str + " Programming";
+        }
+        long endTime = System.currentTimeMillis();
+        System.out.println("Time with String: " + (endTime - startTime) + "ms");
+
+        // Using StringBuffer
+        StringBuffer sb = new StringBuffer("Java");
+        startTime = System.currentTimeMillis();
+        for (int i = 0; i < 10000; i++) {
+            sb.append(" Programming");
+        }
+        endTime = System.currentTimeMillis();
+        System.out.println("Time with StringBuffer: " + (endTime - startTime) + "ms");
+    }
+}
+```
+
+**Output (Approximate):**
+```
+Time with String: 850ms
+Time with StringBuffer: 15ms
+```
+
+**Explanation:**
+- Strings create new objects repeatedly, which increases execution time.
+- StringBuffer reuses the same object, making it faster and memory-efficient.
+
+---
+
+### **7. Related Class – `StringBuilder`**
+
+Java also provides **`StringBuilder`**, introduced in Java 5, which is similar to `StringBuffer` but **not synchronized**.  
+It offers **faster performance** when thread safety is not required.
+
+| **Class** | **Mutable** | **Thread-Safe** | **Performance** |
+|------------|--------------|------------------|------------------|
+| `String` | ❌ No | ✅ Yes | Slow |
+| `StringBuffer` | ✅ Yes | ✅ Yes | Moderate |
+| `StringBuilder` | ✅ Yes | ❌ No | Fast |
+
+---
+
+### **8. Memory Representation Diagram**
+
+```
+String s1 = "Java";
+String s2 = s1.concat("Code");
+```
+🡒 Creates **two separate objects** in memory (`"Java"` and `"JavaCode"`).
+
+```
+StringBuffer sb = new StringBuffer("Java");
+sb.append("Code");
+```
+🡒 Only **one object**, content is modified directly.
+
+---
+
+### **Conclusion**
+
+- `StringBuffer` is used when frequent modifications are needed in strings.  
+- It is **mutable** and **thread-safe**, making it suitable for multi-threaded environments.
+- `String` is **immutable** and best suited for **constant or rarely modified** textual data.
+
+**In summary:**  
+Use `String` for fixed text and `StringBuffer` (or `StringBuilder`) when manipulating large or dynamic text content efficiently.
 
 
 
