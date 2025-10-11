@@ -4263,5 +4263,307 @@ Used when you need **fine control** of relative positioning between components (
 > Layout Managers in JFC act as the backbone of GUI design, ensuring components are neatly arranged, properly aligned, and dynamically responsive across platforms.
 
 
+---
+
+### 🏛️ Q17. What are the different forms of inheritance? Does Java support all of them?
+
+**Answer:**
+
+In **Object-Oriented Programming (OOP)**, **inheritance** is one of the core principles that allows a new class (called a *subclass* or *child class*) to **acquire the properties and behaviors** of an existing class (called a *superclass* or *parent class*).
+
+In Java, inheritance promotes **code reusability**, **extensibility**, and **hierarchical classification**.
+
+---
+
+## **1. Definition**
+
+> Inheritance in Java is the mechanism by which one class can inherit fields and methods from another class using the `extends` keyword.
+
+**Syntax:**
+```java
+class Parent {
+    // parent properties and methods
+}
+
+class Child extends Parent {
+    // child inherits everything from Parent
+}
+```
+
+---
+
+## **2. Types of Inheritance**
+
+Java supports several types of inheritance, some **directly** and some **indirectly** through interfaces.  
+Let’s discuss each form in detail:
+
+---
+
+### **1️⃣ Single Inheritance**
+
+In single inheritance, a **subclass inherits** from **only one superclass**.  
+This is the simplest and most common form of inheritance.
+
+**Example:**
+```java
+class Animal {
+    void eat() {
+        System.out.println("Animals eat food.");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog barks.");
+    }
+}
+
+public class SingleInheritance {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.eat();
+        d.bark();
+    }
+}
+```
+
+**Output:**
+```
+Animals eat food.
+Dog barks.
+```
+
+✅ **Explanation:**  
+`Dog` inherits the method `eat()` from the `Animal` class.
+
+---
+
+### **2️⃣ Multilevel Inheritance**
+
+In multilevel inheritance, a **class is derived from another derived class** — forming a chain.
+
+**Example:**
+```java
+class Animal {
+    void eat() {
+        System.out.println("Animals eat food.");
+    }
+}
+
+class Mammal extends Animal {
+    void walk() {
+        System.out.println("Mammals walk.");
+    }
+}
+
+class Dog extends Mammal {
+    void bark() {
+        System.out.println("Dog barks.");
+    }
+}
+
+public class MultilevelInheritance {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.eat();
+        d.walk();
+        d.bark();
+    }
+}
+```
+
+**Output:**
+```
+Animals eat food.
+Mammals walk.
+Dog barks.
+```
+
+✅ **Explanation:**  
+`Dog` inherits from `Mammal`, and `Mammal` inherits from `Animal`.  
+Hence, `Dog` indirectly inherits from `Animal` too.
+
+---
+
+### **3️⃣ Hierarchical Inheritance**
+
+In hierarchical inheritance, **multiple subclasses** inherit from a **single parent class**.
+
+**Example:**
+```java
+class Animal {
+    void eat() {
+        System.out.println("Animals eat food.");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog barks.");
+    }
+}
+
+class Cat extends Animal {
+    void meow() {
+        System.out.println("Cat meows.");
+    }
+}
+
+public class HierarchicalInheritance {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        Cat c = new Cat();
+        d.eat();
+        d.bark();
+        c.eat();
+        c.meow();
+    }
+}
+```
+
+**Output:**
+```
+Animals eat food.
+Dog barks.
+Animals eat food.
+Cat meows.
+```
+
+✅ **Explanation:**  
+Both `Dog` and `Cat` classes inherit from the `Animal` class.
+
+---
+
+### **4️⃣ Multiple Inheritance (Not Supported by Classes)**
+
+In multiple inheritance, a **class inherits from more than one superclass**.  
+However, **Java does not support multiple inheritance with classes** to **avoid ambiguity** (known as the *Diamond Problem*).
+
+**For example (not allowed in Java):**
+```java
+class A {
+    void show() { System.out.println("Class A"); }
+}
+
+class B {
+    void show() { System.out.println("Class B"); }
+}
+
+// ❌ Error – Java does not support this
+class C extends A, B { 
+    // Compilation error: multiple inheritance not allowed
+}
+```
+
+✅ **Reason:**  
+If both `A` and `B` contain a method `show()`, the compiler cannot decide which one `C` should inherit — leading to **ambiguity**.
+
+---
+
+### **5️⃣ Multiple Inheritance using Interfaces (Supported)**
+
+Although multiple inheritance is **not supported through classes**,  
+it **is supported through interfaces** — because interfaces only contain **abstract methods** and **constants**, so ambiguity does not occur.
+
+**Example:**
+```java
+interface Printable {
+    void print();
+}
+
+interface Showable {
+    void show();
+}
+
+class Demo implements Printable, Showable {
+    public void print() {
+        System.out.println("Printing...");
+    }
+    public void show() {
+        System.out.println("Showing...");
+    }
+}
+
+public class InterfaceInheritance {
+    public static void main(String[] args) {
+        Demo d = new Demo();
+        d.print();
+        d.show();
+    }
+}
+```
+
+**Output:**
+```
+Printing...
+Showing...
+```
+
+✅ **Explanation:**  
+The class `Demo` implements multiple interfaces, achieving **multiple inheritance behavior** safely.
+
+---
+
+### **6️⃣ Hybrid Inheritance**
+
+Hybrid inheritance is a **combination of multiple types** (for example, multilevel + multiple).  
+Java **does not support hybrid inheritance directly** using classes,  
+but it can be **achieved using interfaces**.
+
+**Example (Hybrid through Interfaces):**
+```java
+interface A { void showA(); }
+interface B extends A { void showB(); }
+
+class C implements B {
+    public void showA() { System.out.println("Interface A method"); }
+    public void showB() { System.out.println("Interface B method"); }
+}
+
+public class HybridExample {
+    public static void main(String[] args) {
+        C obj = new C();
+        obj.showA();
+        obj.showB();
+    }
+}
+```
+
+---
+
+## **3. Summary of Inheritance Forms**
+
+| Type | Description | Supported in Java? |
+|------|--------------|--------------------|
+| Single | One class inherits another | ✅ Yes |
+| Multilevel | Class inherits a class which inherits another | ✅ Yes |
+| Hierarchical | Multiple classes inherit a common parent | ✅ Yes |
+| Multiple (via classes) | One class inherits more than one class | ❌ No |
+| Multiple (via interfaces) | Class implements multiple interfaces | ✅ Yes |
+| Hybrid | Combination of two or more types | ⚙️ Partially (via interfaces) |
+
+---
+
+## **4. Advantages of Inheritance**
+
+- Promotes **code reusability** and reduces redundancy.  
+- Supports **method overriding** and **polymorphism**.  
+- Enables **hierarchical organization** of classes.  
+- Simplifies **maintenance** and **extensibility** of code.
+
+---
+
+### **Conclusion**
+
+Java supports **single, multilevel, and hierarchical inheritance** directly through classes.  
+It **does not support multiple inheritance through classes** to prevent ambiguity but achieves it **through interfaces**.  
+
+Thus, Java provides a **safe, flexible, and structured** approach to inheritance — ensuring clarity and avoiding the pitfalls of complex inheritance models.
+
+---
+
+
+
+
 
 
