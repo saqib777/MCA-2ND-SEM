@@ -1,6 +1,6 @@
-MCA 2nd SEM - OPPS with Java - Important Questions
+## **MCA 2nd SEM - OPPS with Java - Important Questions**
 
-### 5 Marks 
+### **5 Marks** 
 
 ### Q1. What are Variables?
 
