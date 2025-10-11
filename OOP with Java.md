@@ -3911,4 +3911,164 @@ The **try and catch** clauses in Java are essential for **robust and fault-toler
 - `catch` handles specific exceptions gracefully.  
 Together, they make applications **reliable, safe, and user-friendly**, even in the presence of runtime errors.
 
+---
+
+### 🏛️ Q15. Explain Methods in Streams
+
+**Answer:**
+
+In Java, **streams** are used to **perform input and output (I/O) operations**.  
+A stream represents a **sequence of data** — it can be a sequence of **bytes** or **characters** flowing from a **source** (input) or to a **destination** (output).  
+
+Java’s I/O system is based on two major abstract classes:
+
+- **InputStream / Reader** – for reading data  
+- **OutputStream / Writer** – for writing data  
+
+---
+
+## **1. InputStream Methods**
+
+The **InputStream** class (in `java.io` package) is an **abstract class** that defines methods to **read bytes** from an input source such as a file, network, or keyboard.
+
+### **Common Methods of InputStream**
+
+| Method | Description |
+|--------|--------------|
+| `int read()` | Reads one byte of data and returns it as an integer (0–255). Returns -1 if end of stream is reached. |
+| `int read(byte[] b)` | Reads data into a byte array `b`. Returns number of bytes read. |
+| `int read(byte[] b, int off, int len)` | Reads up to `len` bytes from the stream into the array starting at offset `off`. |
+| `void close()` | Closes the input stream and releases system resources. |
+| `int available()` | Returns number of bytes that can be read without blocking. |
+| `long skip(long n)` | Skips `n` bytes of input. |
+
+### **Example – Using FileInputStream**
+```java
+import java.io.*;
+
+public class InputStreamExample {
+    public static void main(String[] args) {
+        try (FileInputStream fin = new FileInputStream("example.txt")) {
+            int i;
+            while ((i = fin.read()) != -1) {
+                System.out.print((char) i);  // Display file content
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+**Explanation:**
+- `read()` reads one byte at a time from the file.  
+- `close()` automatically closes the file (due to try-with-resources).  
+
+---
+
+## **2. OutputStream Methods**
+
+The **OutputStream** class (also in `java.io`) is an **abstract class** that defines methods to **write bytes** to an output destination such as a file or console.
+
+### **Common Methods of OutputStream**
+
+| Method | Description |
+|--------|--------------|
+| `void write(int b)` | Writes a single byte to the output stream. |
+| `void write(byte[] b)` | Writes all bytes from array `b` to the stream. |
+| `void write(byte[] b, int off, int len)` | Writes `len` bytes from array `b` starting at position `off`. |
+| `void flush()` | Forces any buffered output bytes to be written immediately. |
+| `void close()` | Closes the stream and releases system resources. |
+
+### **Example – Using FileOutputStream**
+```java
+import java.io.*;
+
+public class OutputStreamExample {
+    public static void main(String[] args) {
+        String data = "Hello, Java Stream!";
+        try (FileOutputStream fout = new FileOutputStream("output.txt")) {
+            fout.write(data.getBytes());
+            fout.flush();
+            System.out.println("Data successfully written to file.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+**Explanation:**
+- `write()` writes data as bytes to the file.  
+- `flush()` ensures all buffered data is written.  
+- `close()` closes the file and releases resources.  
+
+---
+
+## **3. Reader and Writer Methods**
+
+Java also provides **character-based streams** (`Reader` and `Writer` classes) for handling **text data (Unicode)**.
+
+### **Common Reader Methods**
+| Method | Description |
+|--------|--------------|
+| `int read()` | Reads a single character. |
+| `int read(char[] cbuf)` | Reads characters into a character array. |
+| `void close()` | Closes the stream. |
+
+### **Common Writer Methods**
+| Method | Description |
+|--------|--------------|
+| `void write(int c)` | Writes a single character. |
+| `void write(String str)` | Writes an entire string. |
+| `void flush()` | Flushes the stream. |
+| `void close()` | Closes the writer. |
+
+---
+
+## **4. Example Using Reader and Writer**
+
+```java
+import java.io.*;
+
+public class ReaderWriterExample {
+    public static void main(String[] args) {
+        try (FileWriter writer = new FileWriter("message.txt")) {
+            writer.write("Java I/O Streams Example");
+            writer.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try (FileReader reader = new FileReader("message.txt")) {
+            int ch;
+            while ((ch = reader.read()) != -1) {
+                System.out.print((char) ch);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+---
+
+## **5. Summary of Stream Methods**
+
+| Category | Class | Key Methods | Purpose |
+|-----------|--------|-------------|----------|
+| Input Stream | `InputStream`, `FileInputStream` | `read()`, `available()`, `close()` | Reads byte data |
+| Output Stream | `OutputStream`, `FileOutputStream` | `write()`, `flush()`, `close()` | Writes byte data |
+| Character Stream | `Reader`, `Writer` | `read()`, `write()`, `flush()`, `close()` | Handles character data |
+
+---
+
+### **Conclusion:**
+
+- Streams in Java provide a **unified mechanism** for reading and writing data.  
+- The **InputStream/Reader** classes are used to **read data**, while **OutputStream/Writer** classes are used to **write data**.  
+- Understanding stream methods ensures **efficient data handling**, **file processing**, and **I/O operations** in Java programs.
+
+
 
