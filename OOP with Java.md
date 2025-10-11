@@ -3781,5 +3781,134 @@ sb.append("Code");
 **In summary:**  
 Use `String` for fixed text and `StringBuffer` (or `StringBuilder`) when manipulating large or dynamic text content efficiently.
 
+---
+
+🏛️ 14. Explain the usage of try and catch clause with an example.  
+
+### Q14. Explain the Usage of try and catch Clause with an Example
+
+**Answer:**
+
+In Java, **exception handling** is a powerful mechanism that allows programmers to **handle runtime errors** gracefully without abruptly terminating the program.  
+The **try and catch** blocks are the **core components** of this mechanism.
+
+---
+
+## **1. Purpose of try and catch**
+
+- **try block:** Contains code that may cause an exception.  
+- **catch block:** Handles the exception generated inside the try block.  
+- Together, they help in writing **error-tolerant and stable programs**.
+
+---
+
+## **2. Syntax of try and catch**
+
+```java
+try {
+    // Code that might throw an exception
+} catch (ExceptionType e) {
+    // Code to handle the exception
+}
+```
+
+**Explanation:**
+- Only **one try block** can exist for a given set of operations.  
+- There can be **multiple catch blocks**, each handling different exception types.  
+- If no exception occurs, the catch block is **skipped**.
+
+---
+
+## **3. Example: Using try and catch**
+
+```java
+public class TryCatchExample {
+    public static void main(String[] args) {
+        try {
+            int a = 10, b = 0;
+            int result = a / b; // Division by zero - causes ArithmeticException
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Division by zero is not allowed!");
+        }
+
+        System.out.println("Program continues normally after handling exception.");
+    }
+}
+```
+
+**Output:**
+```
+Error: Division by zero is not allowed!
+Program continues normally after handling exception.
+```
+
+**Explanation:**
+- The statement `a / b` throws an `ArithmeticException`.  
+- The `catch` block catches the exception and prints a message.  
+- The program continues to execute normally after exception handling.
+
+---
+
+## **4. Multiple Catch Blocks Example**
+
+Java allows multiple catch blocks to handle different exception types.
+
+```java
+try {
+    int[] arr = new int[3];
+    arr[5] = 25; // ArrayIndexOutOfBoundsException
+} catch (ArithmeticException e) {
+    System.out.println("Arithmetic error occurred!");
+} catch (ArrayIndexOutOfBoundsException e) {
+    System.out.println("Array index is out of range!");
+} catch (Exception e) {
+    System.out.println("General exception occurred!");
+}
+```
+
+**Explanation:**
+- Java checks catch blocks **from top to bottom**.  
+- The **first matching catch block** is executed.  
+- The **generic Exception** block should always come **last**, as it can handle all types.
+
+---
+
+## **5. Nested try and catch**
+
+You can place one `try-catch` block inside another for **fine-grained error handling**.
+
+```java
+try {
+    try {
+        int[] arr = {10, 20};
+        System.out.println(arr[5]);
+    } catch (ArrayIndexOutOfBoundsException e) {
+        System.out.println("Inner catch: Invalid array index");
+    }
+} catch (Exception e) {
+    System.out.println("Outer catch: General exception");
+}
+```
+
+---
+
+## **6. Importance of try and catch**
+
+| Feature | Description |
+|----------|--------------|
+| Error Handling | Prevents program crashes due to runtime errors |
+| Code Separation | Keeps normal logic separate from error handling |
+| Program Continuity | Allows program to continue after an error |
+| User-Friendly | Provides meaningful error messages to users |
+
+---
+
+### **Conclusion:**
+
+The **try and catch** clauses in Java are essential for **robust and fault-tolerant programming**.  
+- `try` identifies risky code,  
+- `catch` handles specific exceptions gracefully.  
+Together, they make applications **reliable, safe, and user-friendly**, even in the presence of runtime errors.
 
 
