@@ -4700,6 +4700,186 @@ In Java, **virtual methods** form the foundation of **runtime polymorphism**.
 They allow a program to determine **which version of a method to execute at runtime**, making code **more flexible, extensible, and maintainable**.  
 All instance methods are **virtual by default**, unless explicitly declared as `final`, `static`, or `private`.
 
+---
+
+### 🏛️ Q20. Elucidate Methods of OutputStream/Writer with an example
+
+**Answer:**
+
+In Java, the **OutputStream** and **Writer** classes are part of the **java.io package** and are used for **writing data** from a Java program to an output destination such as a file, console, or network socket.
+
+Both are **abstract classes**, meaning they define the basic structure and methods for output operations but require subclass implementations like `FileOutputStream`, `BufferedWriter`, or `PrintWriter`.
+
+---
+
+## **1. Introduction to OutputStream**
+
+- The `OutputStream` class is used for **byte-oriented output** — i.e., it writes data as **bytes (8-bit)**.
+- All byte output classes (like `FileOutputStream`, `BufferedOutputStream`, `DataOutputStream`) extend the `OutputStream` class.
+
+**Hierarchy:**
+```
+java.lang.Object
+   ↳ java.io.OutputStream
+       ↳ FileOutputStream
+       ↳ ByteArrayOutputStream
+       ↳ FilterOutputStream
+```
+
+---
+
+## **2. Important Methods of OutputStream**
+
+| Method | Description |
+|--------|--------------|
+| `void write(int b)` | Writes one byte to the output stream. |
+| `void write(byte[] b)` | Writes an array of bytes to the output stream. |
+| `void write(byte[] b, int off, int len)` | Writes `len` bytes from the array starting at offset `off`. |
+| `void flush()` | Forces any buffered output bytes to be written immediately. |
+| `void close()` | Closes the stream and releases system resources. |
+
+---
+
+### **Example – Using FileOutputStream**
+
+```java
+import java.io.*;
+
+public class OutputStreamExample {
+    public static void main(String[] args) {
+        String text = "Hello, OutputStream in Java!";
+        
+        try {
+            FileOutputStream fout = new FileOutputStream("output.txt");
+            byte[] data = text.getBytes();  // Convert string to bytes
+            
+            fout.write(data);  // Write byte array to file
+            fout.flush();      // Force data to be written
+            fout.close();      // Close the stream
+            
+            System.out.println("Data written successfully to output.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+**Output (File Content):**
+```
+Hello, OutputStream in Java!
+```
+
+✅ **Explanation:**
+- `write()` writes byte data to the file.  
+- `flush()` ensures all buffered bytes are written before closing.  
+- `close()` frees system resources.
+
+---
+
+## **3. Introduction to Writer**
+
+- The `Writer` class is the **character-oriented counterpart** of `OutputStream`.  
+- It handles **Unicode characters (16-bit)** instead of bytes.
+- Subclasses include `FileWriter`, `BufferedWriter`, and `PrintWriter`.
+
+**Hierarchy:**
+```
+java.lang.Object
+   ↳ java.io.Writer
+       ↳ FileWriter
+       ↳ BufferedWriter
+       ↳ PrintWriter
+```
+
+---
+
+## **4. Important Methods of Writer**
+
+| Method | Description |
+|--------|--------------|
+| `void write(int c)` | Writes a single character. |
+| `void write(char[] cbuf)` | Writes an array of characters. |
+| `void write(String str)` | Writes a string to the output stream. |
+| `void write(char[] cbuf, int off, int len)` | Writes a portion of a character array. |
+| `void flush()` | Flushes the stream (forces writing of buffered data). |
+| `void close()` | Closes the writer and releases resources. |
+
+---
+
+### **Example – Using FileWriter**
+
+```java
+import java.io.*;
+
+public class WriterExample {
+    public static void main(String[] args) {
+        try {
+            FileWriter writer = new FileWriter("message.txt");
+            writer.write("Java Writer Example\n");
+            writer.write("Character streams handle Unicode text.");
+            writer.flush();  // Ensure all data is written
+            writer.close();  // Close the stream
+            
+            System.out.println("Data successfully written to message.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+**Output (File Content):**
+```
+Java Writer Example
+Character streams handle Unicode text.
+```
+
+✅ **Explanation:**
+- `write()` sends characters to the file.
+- `flush()` ensures all buffered characters are written.
+- `close()` closes the stream safely.
+
+---
+
+## **5. Key Differences Between OutputStream and Writer**
+
+| Feature | OutputStream | Writer |
+|----------|---------------|---------|
+| Data Type | Byte-based (8-bit) | Character-based (16-bit, Unicode) |
+| Class Hierarchy | `OutputStream` → `FileOutputStream` | `Writer` → `FileWriter` |
+| Use Case | Binary data (images, audio) | Text data (strings, characters) |
+| Example | `FileOutputStream`, `DataOutputStream` | `FileWriter`, `BufferedWriter` |
+
+---
+
+## **6. Common Subclasses and Their Purpose**
+
+| Subclass | Type | Description |
+|-----------|------|-------------|
+| `FileOutputStream` | Byte | Writes bytes to a file. |
+| `BufferedOutputStream` | Byte | Adds buffering for efficiency. |
+| `DataOutputStream` | Byte | Writes Java primitive data types. |
+| `FileWriter` | Character | Writes characters to a file. |
+| `BufferedWriter` | Character | Buffers output to improve performance. |
+| `PrintWriter` | Character | Offers convenient `print()` and `println()` methods. |
+
+---
+
+## **7. Summary**
+
+- **OutputStream** and **Writer** classes handle **data output** operations.  
+- They provide methods like **write()**, **flush()**, and **close()** for controlled data output.  
+- **OutputStream** handles **byte data**, while **Writer** handles **character data**.  
+- Always call **flush()** before **close()** to ensure all data is written properly.
+
+---
+
+### **Conclusion**
+
+The **OutputStream** and **Writer** classes form the foundation of Java’s output I/O system.  
+They allow developers to write both **binary and character data** efficiently and safely,  
+ensuring data integrity and smooth I/O operations across files, consoles, and networks.
 
 
 
