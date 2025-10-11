@@ -4563,6 +4563,142 @@ Thus, Java provides a **safe, flexible, and structured** approach to inheritance
 ---
 
 
+### 🏛️ Q19. Explain Virtual Methods
+
+**Answer:**
+
+In **Object-Oriented Programming (OOP)**, a **virtual method** (also known as a **virtual function**) is a method that is **declared in a superclass** and **overridden in a subclass**.  
+In Java, **all non-static, non-final, and non-private methods** are **virtual by default**.
+
+This means the method call is **resolved at runtime** (not at compile-time), enabling **runtime polymorphism** or **dynamic method dispatch**.
+
+---
+
+## **1. Definition**
+
+> A **virtual method** in Java is a method that can be **overridden in a subclass**, and the **method call is determined at runtime** based on the **object’s actual type**, not its reference type.
+
+---
+
+## **2. Concept Explanation**
+
+When a subclass overrides a superclass method, and that method is called through a superclass reference,  
+Java uses the **object’s actual type** (not the reference type) to decide **which version of the method to invoke**.
+
+This behavior is called **Dynamic Method Dispatch**.
+
+---
+
+## **3. Example of Virtual Methods**
+
+```java
+class Animal {
+    void makeSound() {
+        System.out.println("Animal makes sound");
+    }
+}
+
+class Dog extends Animal {
+    void makeSound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+    void makeSound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class VirtualMethodExample {
+    public static void main(String[] args) {
+        Animal a;   // Reference of superclass
+
+        a = new Dog();  // Dog object
+        a.makeSound();  // Calls Dog's method
+
+        a = new Cat();  // Cat object
+        a.makeSound();  // Calls Cat's method
+    }
+}
+```
+
+**Output:**
+```
+Dog barks
+Cat meows
+```
+
+✅ **Explanation:**
+- The reference `a` is of type `Animal`, but it points to different subclass objects (`Dog`, `Cat`).
+- The method `makeSound()` is **virtual**, so the JVM calls the **overridden version** at runtime based on the **actual object type**.
+- This demonstrates **runtime polymorphism**.
+
+---
+
+## **4. Characteristics of Virtual Methods in Java**
+
+| Characteristic | Description |
+|----------------|-------------|
+| **Default Nature** | All non-static, non-final, and non-private methods in Java are virtual. |
+| **Overridable** | Can be overridden by a subclass. |
+| **Runtime Binding** | Method calls are resolved at runtime (dynamic binding). |
+| **Supports Polymorphism** | Enables different behaviors for the same method call. |
+| **Cannot Be Static or Final** | Static and final methods are bound at compile-time (early binding). |
+
+---
+
+## **5. Non-Virtual Methods**
+
+Not all methods are virtual. Some are **resolved at compile-time** (known as *early binding*).
+
+| Method Type | Virtual? | Reason |
+|--------------|-----------|--------|
+| `static` | ❌ No | Belongs to class, not object. |
+| `final` | ❌ No | Cannot be overridden. |
+| `private` | ❌ No | Not visible to subclass. |
+| `constructor` | ❌ No | Not inherited. |
+| `abstract` | ✅ Yes | Must be overridden in subclass. |
+
+---
+
+## **6. Why Virtual Methods Are Important**
+
+1. **Enables Polymorphism:**  
+   - Same method name behaves differently depending on the object type.  
+2. **Code Reusability:**  
+   - Base class code can be reused and extended easily.  
+3. **Flexibility:**  
+   - Allows generic programming using superclass references.  
+4. **Extensibility:**  
+   - New subclasses can change or extend base class behavior.
+
+---
+
+## **7. Real-life Analogy**
+
+Think of a **remote control** (`Animal` reference) that can operate different devices (`Dog`, `Cat` objects).  
+The same “button press” (method call) performs different actions depending on the device (object) it controls.
+
+---
+
+## **8. Summary Table**
+
+| Concept | Description |
+|----------|-------------|
+| Virtual Method | Method whose behavior is decided at runtime. |
+| Mechanism | Dynamic Method Dispatch |
+| Supported by | All non-final, non-static, non-private methods |
+| Advantage | Achieves runtime polymorphism |
+| Example | Overridden method in subclass called through superclass reference |
+
+---
+
+### **Conclusion**
+
+In Java, **virtual methods** form the foundation of **runtime polymorphism**.  
+They allow a program to determine **which version of a method to execute at runtime**, making code **more flexible, extensible, and maintainable**.  
+All instance methods are **virtual by default**, unless explicitly declared as `final`, `static`, or `private`.
 
 
 
