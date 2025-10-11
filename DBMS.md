@@ -803,3 +803,431 @@ JDBC architecture ensures **database-independent connectivity** for Java applica
 
 ### **10 Marks Questions**
 
+🏛️ 24. With a Neat Diagram, Explain Database System
+
+### Database System
+
+A **Database System** is a collection of **interrelated data** and a set of programs that allow users to **store, modify, and extract information efficiently**.
+
+#### Components:
+1. **Hardware**
+   - Computers, storage devices, servers.
+   - Example: Disk drives to store database files.
+
+2. **Software**
+   - **DBMS software** to manage data.
+   - Query languages like SQL.
+
+3. **Data**
+   - Stored in structured tables or relations.
+   - Includes schemas, tables, and indexes.
+
+4. **Users**
+   - Database Administrators (DBA): Manage structure and security.
+   - End Users: Query and update data.
+
+5. **Procedures**
+   - Instructions and rules for database usage.
+
+#### Diagram of Database System:
+```
+         +----------------+
+         |    Users       |
+         +----------------+
+                 |
+         +----------------+
+         |    Application |
+         +----------------+
+                 |
+         +----------------+
+         |      DBMS      |
+         +----------------+
+                 |
+         +----------------+
+         |   Database     |
+         +----------------+
+```
+
+#### Key Points:
+- Centralized control ensures **consistency and integrity**.
+- Supports **multi-user environment**.
+- Enables **data abstraction and security**.
+
+**Conclusion:**  
+A database system integrates **hardware, software, data, and users**, providing an efficient platform for data management.
+
+
+---
+
+🏛️ 25. With an Example, Explain the First Normal Form (1NF)
+
+### First Normal Form (1NF)
+
+**1NF** is the **first step in database normalization** to eliminate data redundancy and ensure atomicity.
+
+#### Rules for 1NF:
+1. Each column must have **atomic (indivisible) values**.
+2. No **repeating groups or arrays**.
+3. Each row must be **unique**.
+
+#### Example (Unnormalized Table):
+| StudentID | Name  | Courses       |
+|-----------|-------|---------------|
+| 1         | Riya  | DBMS, Java    |
+| 2         | Arjun | Java, Python  |
+
+#### Convert to 1NF:
+- Split repeating groups into separate rows.
+| StudentID | Name  | Course  |
+|-----------|-------|---------|
+| 1         | Riya  | DBMS    |
+| 1         | Riya  | Java    |
+| 2         | Arjun | Java    |
+| 2         | Arjun | Python  |
+
+**Advantages of 1NF:**
+- Removes redundancy.
+- Ensures atomic data storage.
+- Simplifies querying and updates.
+
+**Conclusion:**  
+1NF ensures **atomicity and consistency**, forming the foundation for further normalization.
+
+
+---
+
+🏛️ 26. Explain Weak Entity Types
+
+### Weak Entity Types
+
+A **Weak Entity** is an entity that **cannot be uniquely identified** using its own attributes alone. It depends on a **strong entity** for identification.
+
+#### Characteristics:
+1. **Existence Dependency:** Cannot exist without the strong entity.
+2. **No Primary Key:** Identified using a **partial key** combined with foreign key.
+3. **Double Rectangle Representation:** In ER diagrams.
+
+#### Example:
+- Entities: **Employee** (strong), **Dependent** (weak)
+- Dependent attributes: `DepName`, `Age`
+- Relation: `EmployeeID` (from Employee) + `DepName` → unique identifier
+
+#### ER Diagram:
+```
++-----------+      +----------------+
+| Employee  |◄─────|  Dependent     |
++-----------+      +----------------+
+(EmpID)          (DepName, Age, EmpID)
+```
+
+**Conclusion:**  
+Weak entities model **dependent data** while maintaining **referential integrity** with the strong entity.
+
+
+---
+
+🏛️ 27. Elucidate Join Operation
+
+
+### Join Operation in DBMS
+
+A **Join** combines rows from **two or more tables** based on a **related column**.
+
+#### Types of Join:
+
+1. **Inner Join**
+   - Returns rows with matching values in both tables.
+   ```sql
+   SELECT Students.Name, Courses.CourseName
+   FROM Students
+   INNER JOIN Courses ON Students.CourseID = Courses.CourseID;
+   ```
+
+2. **Left Join**
+   - Returns all rows from left table and matched rows from right table.
+3. **Right Join**
+   - Returns all rows from right table and matched rows from left table.
+4. **Full Join**
+   - Returns all rows when a match exists in either table.
+5. **Cross Join**
+   - Cartesian product of tables.
+6. **Self Join**
+   - A table joins with itself.
+
+#### Example:
+| StudentID | Name  | CourseID |
+|-----------|-------|----------|
+| 1         | Riya  | 101      |
+| 2         | Arjun | 102      |
+
+| CourseID | CourseName |
+|----------|------------|
+| 101      | DBMS       |
+| 102      | Java       |
+
+**Inner Join Result:**
+| Name  | CourseName |
+|-------|------------|
+| Riya  | DBMS       |
+| Arjun | Java       |
+
+**Conclusion:**  
+Joins are essential to **combine data from multiple tables** for meaningful queries.
+
+
+---
+
+🏛️ 28. Discuss ER Modelling Concepts and Notations
+
+### ER Modelling Concepts and Notations
+
+**ER (Entity-Relationship) Model** is a **graphical approach** to represent database structure.
+
+#### Key Concepts:
+
+1. **Entity**
+- A real-world object or concept.
+- Represented by **rectangle**.
+- Example: Student, Employee.
+
+2. **Attributes**
+- Properties of an entity.
+- Represented by **ellipse**.
+- Example: Name, Age, Address.
+
+3. **Primary Key**
+- Unique identifier for entity instances.
+- Underlined in ER diagrams.
+
+4. **Relationship**
+- Association between entities.
+- Represented by **diamond**.
+- Example: Enrolled, Works_For.
+
+5. **Weak Entity**
+- Dependent entity without a primary key.
+- Double rectangle notation.
+
+6. **Identifying Relationship**
+- Relationship connecting weak entity to strong entity.
+- Double diamond notation.
+
+7. **Cardinality**
+- Defines number of instances in a relationship.
+- Example: One-to-One (1:1), One-to-Many (1:N), Many-to-Many (M:N).
+
+#### ER Diagram Example:
+```
+    +---------+       +---------+
+    | Student |-------| Course  |
+    +---------+       +---------+
+      (SID)             (CID)
+```
+
+**Conclusion:**  
+ER modelling provides a **visual and structured representation** of database design, simplifying schema creation and understanding relationships.
+
+
+---
+
+🏛️ 29. With a Neat Diagram, Explain Database System
+
+
+### Database System
+
+A **Database System** is a structured collection of data managed by a **Database Management System (DBMS)**. It provides an organized way to **store, manage, and retrieve data efficiently**.
+
+#### Components:
+
+1. **Users**
+   - Database Administrators (DBA): Manage and maintain the database.
+   - End Users: Interact with the system to access or manipulate data.
+
+2. **DBMS Software**
+   - Provides tools for data storage, retrieval, security, concurrency control, and transaction management.
+
+3. **Database**
+   - Centralized repository storing structured data in tables, schemas, and records.
+
+4. **Hardware**
+   - Servers, storage devices, and network infrastructure.
+
+#### Diagram:
+```
+         +----------------+
+         |     Users      |
+         +----------------+
+                 |
+                 v
+         +----------------+
+         |      DBMS      |
+         +----------------+
+                 |
+                 v
+         +----------------+
+         |    Database    |
+         +----------------+
+                 |
+                 v
+         +----------------+
+         |   Hardware     |
+         +----------------+
+```
+
+#### Features:
+- Centralized control and management of data.
+- Reduced data redundancy and improved consistency.
+- Security, backup, and recovery support.
+- Supports multiple users and concurrent access.
+
+**Conclusion:**  
+A database system ensures **efficient, secure, and reliable management** of data, forming the foundation for modern applications.
+
+
+---
+
+🏛️ 30. With Example, Explain the First Normal Form (1NF)
+
+
+### First Normal Form (1NF)
+
+**1NF** is the **first step in normalization** aimed at removing **repeating groups** and ensuring **atomicity** of data.
+
+#### Conditions for 1NF:
+1. Each column contains **atomic (indivisible) values**.
+2. Each row must be **unique**.
+3. No **repeating groups** or arrays.
+
+#### Example:
+
+**Unnormalized Table (UNF):**
+| StudentID | Name  | Courses       |
+|-----------|-------|---------------|
+| 1         | Asha  | DBMS, Java    |
+| 2         | Ravi  | SQL, Python   |
+
+**Problem:**  
+`Courses` column has multiple values → violates 1NF.
+
+**Normalized Table (1NF):**
+| StudentID | Name  | Course   |
+|-----------|-------|----------|
+| 1         | Asha  | DBMS     |
+| 1         | Asha  | Java     |
+| 2         | Ravi  | SQL      |
+| 2         | Ravi  | Python   |
+
+**Conclusion:**  
+1NF ensures **atomicity and no repeating groups**, forming the foundation for higher normal forms and consistent data.
+
+
+---
+
+🏛️ 31. Explain Weak Entity Types
+
+
+### Weak Entity Types in DBMS
+
+A **Weak Entity** cannot be uniquely identified by its own attributes and **depends on a strong entity**.
+
+#### Characteristics:
+- No primary key of its own.
+- Identified using **partial key + primary key of strong entity**.
+- Existence depends on the strong entity.
+- Represented by a **double rectangle**.
+- Connected via **identifying relationship** (double diamond).
+
+#### Example:
+**Entities:** Employee (Strong), Dependent (Weak)
+
+- Employee: `EmpID`, `Name`  
+- Dependent: `DepName`, `Age`, `EmpID` (foreign key to Employee)
+
+**ER Diagram:**
+```
++-----------+      +----------------+
+| Employee  |◄─────| Dependent      |
++-----------+      +----------------+
+  EmpID              DepName, Age, EmpID
+```
+
+**Conclusion:**  
+Weak entities ensure **referential integrity** and model dependent relationships in databases.
+
+
+---
+
+🏛️ 32. Explain Stealing Frames and Forcing Pages
+
+### Stealing Frames and Forcing Pages in DBMS
+
+These concepts relate to **buffer management** and **transaction recovery**.
+
+#### 1. Stealing Frames
+- A buffer frame is **overwritten (stolen)** even if a transaction modifying it is **not yet committed**.
+- Requires **undo** operations during rollback.
+- Advantage: Optimizes memory usage.
+
+#### 2. Forcing Pages
+- A page modified by a transaction is **written to disk before commit**.
+- Ensures **durability** of committed transactions.
+- Advantage: Reduces redo operations after a crash.
+
+#### Example:
+- Transaction T modifies Page P.
+  - **Stealing:** Page P may be written to disk before T commits → undo required on failure.
+  - **Forcing:** Page P is written immediately when T commits → ensures durability.
+
+**Conclusion:**  
+Stealing and forcing help balance **performance, memory utilization, and transaction reliability** in DBMS.
+
+
+---
+
+🏛️ 33. Explain Client-Server Architecture for DDBMS
+
+### Client-Server Architecture in DDBMS
+
+A **Distributed Database Management System (DDBMS)** often uses **client-server architecture** to manage data across multiple sites.
+
+#### Components:
+
+1. **Client**
+- User interface or application.
+- Sends queries to the server.
+- Does not manage database storage.
+
+2. **Server**
+- Centralized or distributed database servers.
+- Processes client requests, executes queries, manages transactions, and ensures consistency.
+
+3. **Network**
+- Connects clients and servers.
+- Enables communication and data transfer.
+
+#### Diagram:
+```
+   +---------+      +---------+
+   | Client1 |      | Client2 |
+   +---------+      +---------+
+        \               /
+         \             /
+          \           /
+           v         v
+         +-----------------+
+         | Distributed DB  |
+         |     Server      |
+         +-----------------+
+```
+
+#### Features:
+- Clients focus on **presentation and query formulation**.
+- Servers handle **storage, processing, and transaction management**.
+- Supports **multiple users and distributed sites** efficiently.
+
+**Conclusion:**  
+Client-server architecture in DDBMS provides **scalability, central control, and efficient resource utilization** across distributed environments.
+
+
+---
+
