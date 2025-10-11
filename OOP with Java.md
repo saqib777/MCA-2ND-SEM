@@ -4071,4 +4071,197 @@ public class ReaderWriterExample {
 - Understanding stream methods ensures **efficient data handling**, **file processing**, and **I/O operations** in Java programs.
 
 
+---
+
+### 🏛️ Q16. What are the various layout managers available in JFC? List each of them with their functionality.
+
+**Answer:**
+
+In **Java Foundation Classes (JFC)**, a **Layout Manager** is an object responsible for **controlling the size, position, and alignment** of components within a **container** (like a JFrame, JPanel, or Applet).  
+
+Instead of manually setting coordinates for each component, layout managers **automatically arrange components** based on specific layout rules, making GUI design more flexible and platform-independent.
+
+---
+
+## **1. Purpose of Layout Managers**
+- Provide **automatic component arrangement** in containers.
+- Allow **dynamic resizing** of components when the window size changes.
+- Make GUIs **platform-independent** (work across different resolutions).
+- Help in **maintaining consistent alignment and spacing**.
+
+---
+
+## **2. Types of Layout Managers in JFC**
+
+Java provides several built-in layout managers in the `java.awt` and `javax.swing` packages.  
+Here’s a list of the most commonly used layout managers along with their functionalities:
+
+---
+
+### **1️⃣ FlowLayout**
+- **Package:** `java.awt`
+- **Description:** Arranges components **in a single row**, left to right, and moves to the next line when space runs out.
+- **Alignment Options:** LEFT, CENTER (default), RIGHT.
+- **Constructor Example:** `new FlowLayout(FlowLayout.CENTER, 10, 10);`
+
+**Example:**
+```java
+setLayout(new FlowLayout());
+add(new JButton("One"));
+add(new JButton("Two"));
+add(new JButton("Three"));
+```
+**Functionality:**  
+Automatically places components in sequence and wraps them to the next line if the row is full.
+
+---
+
+### **2️⃣ BorderLayout**
+- **Package:** `java.awt`
+- **Description:** Divides the container into **five regions** — North, South, East, West, and Center.
+- **Constructor Example:** `new BorderLayout(5, 5);`
+
+**Example:**
+```java
+setLayout(new BorderLayout());
+add(new JButton("North"), BorderLayout.NORTH);
+add(new JButton("South"), BorderLayout.SOUTH);
+add(new JButton("East"), BorderLayout.EAST);
+add(new JButton("West"), BorderLayout.WEST);
+add(new JButton("Center"), BorderLayout.CENTER);
+```
+
+**Functionality:**  
+- Each region can hold **one component**.
+- The **Center** expands to fill available space.
+- Ideal for main windows and dashboards.
+
+---
+
+### **3️⃣ GridLayout**
+- **Package:** `java.awt`
+- **Description:** Divides the container into a **grid of equal-sized rows and columns**.
+- **Constructor Example:** `new GridLayout(rows, columns, hgap, vgap);`
+
+**Example:**
+```java
+setLayout(new GridLayout(2, 3));
+for(int i = 1; i <= 6; i++) {
+    add(new JButton("Button " + i));
+}
+```
+
+**Functionality:**  
+Places components in a **matrix-like structure** (row-major order).  
+Useful for forms, calculators, and tables.
+
+---
+
+### **4️⃣ CardLayout**
+- **Package:** `java.awt`
+- **Description:** Treats each component as a **card**, showing only **one at a time** (like pages in a notebook).
+- **Constructor Example:** `new CardLayout();`
+
+**Example:**
+```java
+CardLayout card = new CardLayout();
+setLayout(card);
+add(new JButton("Card 1"), "First");
+add(new JButton("Card 2"), "Second");
+card.show(this, "Second");
+```
+
+**Functionality:**  
+Used for **wizard-like interfaces** or **multi-step forms**, where users navigate between “cards”.
+
+---
+
+### **5️⃣ GridBagLayout**
+- **Package:** `java.awt`
+- **Description:** The **most flexible and complex layout manager**, allowing components to span **multiple rows and columns** with custom sizes.
+- **Helper Class:** `GridBagConstraints` (controls alignment, padding, weight, etc.)
+- **Constructor Example:** `new GridBagLayout();`
+
+**Example:**
+```java
+setLayout(new GridBagLayout());
+GridBagConstraints gbc = new GridBagConstraints();
+gbc.gridx = 0; gbc.gridy = 0;
+add(new JButton("Button 1"), gbc);
+```
+
+**Functionality:**  
+Provides **fine-grained control** over component placement and spacing.  
+Ideal for **complex GUIs** like forms and dashboards.
+
+---
+
+### **6️⃣ BoxLayout**
+- **Package:** `javax.swing`
+- **Description:** Arranges components **either vertically or horizontally** in a single line.
+- **Constructor Example:** `new BoxLayout(container, BoxLayout.Y_AXIS);`
+
+**Example:**
+```java
+JPanel panel = new JPanel();
+panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+panel.add(new JButton("Top"));
+panel.add(new JButton("Bottom"));
+```
+
+**Functionality:**  
+Used for stacking components neatly in **one direction** (X or Y).  
+Common in Swing applications for toolbar or menu layout.
+
+---
+
+### **7️⃣ GroupLayout**
+- **Package:** `javax.swing`
+- **Description:** Introduced in **Java SE 6** for **GUI builders** (like NetBeans).  
+Allows grouping of components **horizontally and vertically** to align them precisely.
+- **Constructor Example:** `new GroupLayout(container);`
+
+**Functionality:**  
+- Works with **parallel and sequential groups**.
+- Provides control similar to drag-and-drop GUI tools.
+
+---
+
+### **8️⃣ SpringLayout**
+- **Package:** `javax.swing`
+- **Description:** Positions components using **spring-based constraints**, allowing **dynamic resizing and relative positioning**.
+
+**Functionality:**  
+Used when you need **fine control** of relative positioning between components (less common manually, used mostly in GUI builders).
+
+---
+
+## **3. Comparison Table**
+
+| Layout Manager | Arrangement Type | Best Used For | Resizable? |
+|----------------|------------------|---------------|-------------|
+| FlowLayout | Left-to-right flow | Simple forms, toolbars | Yes |
+| BorderLayout | 5 regions | Main window, dashboard | Yes |
+| GridLayout | Rows and columns | Calculator, grids | Yes |
+| CardLayout | One visible card at a time | Tabbed/wizard UIs | Yes |
+| GridBagLayout | Grid with flexible sizing | Complex forms | Yes |
+| BoxLayout | Linear (X/Y axis) | Menus, tool panels | Yes |
+| GroupLayout | Grouped alignment | GUI builder layouts | Yes |
+| SpringLayout | Constraint-based | Custom positioning | Yes |
+
+---
+
+### **4. Conclusion**
+
+- **Layout Managers** are essential for building **responsive and platform-independent GUIs** in Java.  
+- They automatically adjust component placement when the container is resized.  
+- Choosing the right layout manager depends on the **complexity and structure** of the user interface.
+
+---
+
+### **In short:**
+> Layout Managers in JFC act as the backbone of GUI design, ensuring components are neatly arranged, properly aligned, and dynamically responsive across platforms.
+
+
+
 
