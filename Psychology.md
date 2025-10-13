@@ -1313,4 +1313,191 @@ Educational psychology is the scientific study of how people learn and develop i
 
 Educational psychology provides the foundation for effective teaching, learning, and development in schools and beyond, shaping policies, curriculum, and classroom practices for maximal educational success[web:29][web:30][web:34][web:48].
 
+---
+
+# Unit 6: Psychology in Health Setting
+
+**6.3 Meaning and Definition of Health Psychology**
+
+Health Psychology is an interdisciplinary field that applies psychological knowledge and methods to understand how biological, psychological, and social factors influence health, illness, and healthcare. It focuses on promoting health, preventing illness, and improving healthcare systems and policies.
+
+### Authoritative Definitions
+
+- According to Joseph Matarazzo (1982) and endorsed by the American Psychological Association (APA), health psychology is "the aggregate of the specific educational, scientific, and professional contributions of psychology to the promotion and maintenance of health, the prevention and treatment of illness, the identification of etiological and diagnostic correlates of health, illness and related dysfunctions, and the analysis and improvement of the healthcare system and health policy formation"[web:50][web:54].
+  
+- Brannon and Feist (2000) defined health psychology as including "psychology's contributions to the enhancement of health, the prevention and treatment of illness, the identification of health risk factors, the improvement of the healthcare system, and shaping public opinion regarding health"[web:50].
+
+### Key Aspects
+
+- Concerned with psychological and behavioral processes in health, illness, and healthcare delivery[web:52].
+- Uses a biopsychosocial model integrating biological, psychological, and social factors to understand health outcomes[web:51][web:52].
+- Focuses on health promotion, behavioral risk factors (e.g., smoking, diet, exercise), coping mechanisms, and psychological responses to illness[web:50][web:51].
+- Works to improve healthcare systems by advising medical professionals and influencing health policies[web:50].
+
+### Summary
+
+Health psychology studies how mind and behavior impact physical health, aims to promote wellness, prevent disease, and improve healthcare outcomes by integrating psychological theories and practices within medical fields[web:50][web:51][web:54].
+
+
+---
+
+**6.4 HEALTH PSYCHOLOGY AND ITS BRANCHES** 
+
+1. Clinical Health Psychology(CIHP) 
+2. Public Health Psychology (PHP) 
+3. Community Health Psychology (CoHP) 
+4. Critical Health Psychology (CrHP) 
+5. Occupational Health Psychology 
+6. Health Psychology / Medical Psychology 
+7. Clinical Neuropsychology 
+8. Counselling Psychology 
+9. Pediatric Psychology 
+10. Rehabilitation Psychology
+
+---
+
+# Unit 6: Psychology in Health Setting
+
+## 6.5 Clinical Health Psychology (ClHP)
+Clinical Health Psychology is a specialty applying psychological knowledge and methods to promote health, prevent illness, and manage disease in clinical populations. It integrates biological, psychological, social, and cultural factors to provide assessment, intervention, consultation, and research within healthcare settings. Clinical health psychologists work with patients facing acute, chronic or complex health conditions, aiding in areas like weight management, pain management, treatment adherence, and psychological adjustment to illness. They collaborate with healthcare teams to enhance health outcomes and healthcare delivery[web:58][web:59][web:52].
+
+## 6.6 Public Health Psychology (PHP)
+Public Health Psychology focuses on applying psychological principles to promote health and prevent disease at the population level. It involves designing and evaluating community-based health promotion initiatives, understanding social determinants of health, influencing health policies, and addressing health disparities. PHP aims to improve public health outcomes by targeting behavioral risk factors, encouraging healthy lifestyles, and increasing access to healthcare services.
+
+## 6.7 Community Health Psychology (COHP)
+Community Health Psychology studies how social, environmental, and cultural factors affect health within communities. It emphasizes empowerment, prevention, and participation, often working at the grassroots level to promote well-being and address health inequities. COHP practitioners engage with communities to co-develop interventions, foster social support networks, and influence structural changes for better health outcomes.
+
+## 6.8 Critical Health Psychology (CRHP)
+Critical Health Psychology challenges mainstream health psychology’s assumptions by emphasizing the political, economic, and social contexts of health and illness. It critiques power dynamics in healthcare, questions normative ideas about “health,” and advocates for social justice. CRHP focuses on marginalized groups and promotes participatory approaches to health research and practice.
+
+## 6.9 Occupational Health Psychology
+Occupational Health Psychology studies the interaction between work environment, job demands, and employee well-being. It explores how workplace stress, ergonomics, safety policies, and organizational culture impact mental and physical health. The field develops interventions to reduce workplace hazards, improve job satisfaction, and promote healthy work-life balance.
+
+## 6.10 Health Psychology / Medical Psychology
+Health Psychology (sometimes called Medical Psychology) examines psychological factors influencing health and illness broadly. It applies behavioral science to understand risk behaviors, treatment adherence, and psychosocial adjustment to illness. Health psychologists work to optimize healthcare delivery and patient outcomes through education, research, and behavioral interventions[web:52].
+
+## 6.11 Clinical Neuropsychology
+Clinical Neuropsychology focuses on understanding brain-behavior relationships, particularly assessing and treating cognitive, emotional, and behavioral problems resulting from brain injury or neurological illness. Neuropsychologists use specialized testing to diagnose conditions such as dementia, traumatic brain injury, stroke effects, and developmental disorders, guiding rehabilitation and treatment planning.
+
+## 6.12 Counselling Psychology
+Counselling Psychology addresses psychological, emotional, and behavioral issues through psychotherapy and counseling techniques. In health settings, counselling psychologists support patients dealing with chronic illness, disability, lifestyle changes, and mental health challenges, helping improve coping and adjustment.
+
+## 6.13 Pediatric Psychology
+Pediatric Psychology specializes in the psychological aspects of illness and health in children and adolescents. It supports young patients and families managing chronic conditions, developmental disorders, and healthcare experiences, enhancing treatment adherence and psychological well-being.
+
+## 6.14 Rehabilitation Psychology
+Rehabilitation Psychology focuses on helping individuals recover and adapt to disabilities caused by injury, illness, or chronic conditions. It involves assessment, intervention, and counseling aimed at enhancing functional independence, psychological adjustment, and quality of life.
+
+
+# 6.15 Role of Psychologist in Health Care
+
+Psychologists in health care play a multifaceted and essential role in promoting comprehensive patient well-being. Their work integrates psychological principles within medical settings to improve both mental and physical health outcomes.
+
+### Key Roles and Responsibilities:
+
+- **Assessment and Diagnosis**: Conduct psychological assessments using clinical interviews, standardized tests, and behavioral observations to diagnose mental health conditions and behavioral issues related to physical illnesses[web:67][web:62].
+- **Treatment and Intervention**: Provide evidence-based psychological therapies and counseling to help patients cope with chronic illness, pain, disability, stress, and mental health disorders like depression and anxiety[web:67][web:62].
+- **Health Behavior Promotion**: Develop and implement programs to foster healthy behaviors (e.g., smoking cessation, diet, exercise) and disease prevention strategies[web:67].
+- **Consultation and Collaboration**: Work within multidisciplinary healthcare teams, advising medical staff on psychological aspects of patient care, treatment adherence, and behavioral management[web:67][web:68].
+- **Rehabilitation Support**: Assist patients in adjusting to disabilities or chronic conditions, facilitating rehabilitation and improving quality of life[web:62].
+- **Research and Education**: Conduct research to enhance understanding of biopsychosocial factors in health, develop clinical tools, and train healthcare professionals in psychological principles[web:62].
+- **Administration and Quality Improvement**: Participate in healthcare management, policy formation, and quality improvement initiatives to optimize healthcare delivery systems[web:67].
+- **Addressing Health Inequities**: Advocate for equitable healthcare access and tailored interventions based on social determinants of health[web:67].
+
+### Summary:
+Psychologists integrate mental and physical health care by addressing the biopsychosocial dimensions of illness, improving treatment outcomes, patient coping, and healthcare system efficiency. Their role is vital across primary, secondary, and tertiary care settings to support holistic patient care[web:67][web:62][web:68].
+
+---
+
+**Unit 7: Psychology in Organizational Setting**
+
+## Organizational Setting / Structure
+
+An organizational structure defines how tasks are allocated, coordinated, and supervised within an organization. It formalizes roles, responsibilities, communication channels, and authority relationships, aiming to improve efficiency, decision-making, and goal achievement.
+
+## Types of Organizational Structure
+
+### 1. Line Organization
+- Simplest, oldest form.
+- Clear, direct chain of command from top to bottom.
+- Each employee reports to only one supervisor.
+- Suitable for small organizations.
+- Advantages: Clear authority, responsibility, accountability.
+- Disadvantages: Slower decision-making; limited communication; no specialized staff[web:74].
+
+### 2. Functional Organization
+- Groups departments by specialized functions (e.g., marketing, finance).
+- Each department led by a manager with expertise in the function.
+- Advantages: Efficient use of specialized skills; clear career paths.
+- Disadvantages: Can create silos, limiting interdepartmental communication and collaboration[web:74][web:75][web:77].
+
+### 3. Line and Staff Organization
+- Combines line functions with specialized staff roles providing advisory support (e.g., legal, HR).
+- Balances operational management with expert advice.
+- Requires clear role definitions to avoid conflicts[web:74].
+
+### 4. Project Organization
+- Organized around specific projects.
+- Resources and personnel assigned based on project needs.
+- Flexible but may lack continuity once projects conclude[web:74].
+
+### 5. Matrix Organization
+- Hybrid of functional and project structures.
+- Employees report to both functional and project managers.
+- Improves resource use and flexibility.
+- Can cause confusion due to dual authority[web:74][web:75][web:77].
+
+### 6. Hierarchical Structure
+- Pyramid shaped with multiple levels of authority.
+- Clear top-down chain of command.
+- Facilitates defined roles and career paths.
+- May slow decision-making and reduce innovation[web:75][web:76][web:77].
+
+### 7. Flat Structure
+- Few or no middle management levels.
+- Encourages employee involvement and faster decision-making.
+- Common in startups and small companies.
+- Can cause role ambiguity as organizations grow[web:75][web:76][web:77].
+
+### 8. Divisional Structure
+- Organization divided into semi-autonomous divisions by product, geography, or market.
+- Each division has its own resources and leadership.
+- Promotes focus but can duplicate efforts[web:75][web:77].
+
+### 9. Network Structure
+- Central organization coordinates relationships with external entities for products/services.
+- Offers agility and cost-efficiency through outsourcing.
+- Complex to manage and may have duplicated roles[web:74][web:75].
+
+---
+
+This overview provides a conceptual framework for understanding how organizations are structured to facilitate management, communication, and achievement of goals.
+
+---
+
+# Unit 8: Adjustment to Family and Workplace
+
+## 8.5 Criteria of Adjustment
+
+Adjustment to family and workplace refers to an individual’s psychological and behavioral ability to effectively manage and balance the demands, roles, and responsibilities of both domains. Key criteria include:
+
+- **Emotional Stability**: Ability to maintain emotional balance without excessive stress or mood turmoil in family and work roles[web:84][web:85].
+- **Role Performance**: Effective fulfillment of responsibilities and tasks associated with family and workplace roles[web:85].
+- **Role Engagement**: Active involvement and positive attitudes toward family and work obligations beyond mere compliance[web:85].
+- **Work-Family Balance**: Perception of managing both domains adequately, with minimal conflict or interference[web:84][web:89].
+- **Social Support**: Presence of adequate support from family members, colleagues, and employers enabling successful role navigation[web:84].
+- **Adaptability and Flexibility**: Capacity to adjust behaviors and expectations as demands shift in either family or work contexts[web:85].
+
+## 8.6 Consequences of Lack of Adjustment
+
+Failure to adequately adjust to family and workplace demands can result in significant negative outcomes:
+
+- **Psychological Distress**: Increased anxiety, depression, burnout, and lowered overall well-being[web:84][web:91].
+- **Role Conflict and Strain**: Persistent tension between work and family responsibilities leading to reduced satisfaction in both areas[web:84][web:85].
+- **Poor Job Performance**: Decreased productivity, absenteeism, and lower engagement at work[web:84][web:91].
+- **Family Dysfunction**: Strained relationships, poor communication, and decreased family cohesion[web:87][web:88].
+- **Physical Health Problems**: Stress-related illnesses such as hypertension, fatigue, and weakened immune response[web:84].
+- **Reduced Social Support**: Isolation and weakened support networks exacerbating coping difficulties[web:85].
+
+Effective adjustment is crucial for maintaining psychological health and ensuring functional, satisfying roles in both family and work settings, highlighting the importance of workplace support and personal coping resources[web:84][web:85][web:89].
 
