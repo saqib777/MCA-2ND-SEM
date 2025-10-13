@@ -1963,3 +1963,258 @@ SELECT * FROM Orders WHERE CustomerID = 10;
 Cost-Based Optimization ensures **efficient query execution** by using statistical models to choose the **least expensive** plan among alternatives.
 
 ---
+
+### **15 Marks Questions**
+
+# DBMS – 10 Marks Notes
+
+---
+
+### **1. Describe XML Briefly.**
+
+XML (Extensible Markup Language) is a markup language designed primarily to transport and store data, not to display it (unlike HTML). It is widely used for data exchange between diverse systems due to its self-describing nature and platform independence.  
+
+**Key Features:**
+- **Extensible:** Unlike HTML, which uses a fixed set of tags, XML allows users to define their own tags (e.g., `<student>`, `<course>`).
+- **Hierarchical Data Structure:** Data is organized in a tree-like structure with nested elements.
+- **Self-Describing:** Each tag clearly describes the data it encloses, making the document human- and machine-readable.
+- **Validation:** Documents can be validated using **DTD (Document Type Definition)** or **XML Schema**, ensuring structure and integrity.
+
+---
+
+### **2. Discuss ER Modelling Concepts and Notations**
+
+**Entity-Relationship (ER) Modeling** is a high-level conceptual data modeling approach that represents the logical structure of a database.
+
+**Core Concepts:**
+1. **Entity Set:** Collection of similar objects (e.g., Students, Employees).  
+   *Notation:* Rectangle.  
+2. **Attributes:** Properties describing entities (e.g., Name, Age).  
+   *Notation:* Oval. Key attributes are underlined.  
+3. **Relationship Set:** Association among entities (e.g., WORKS_FOR).  
+   *Notation:* Diamond.
+
+**Constraints and Notations:**
+- **Cardinality Ratios:** Indicate the number of entities involved (1:1, 1:N, M:N).  
+- **Participation Constraints:**  
+  - Total (double line)  
+  - Partial (single line)  
+- **Weak Entity Set:** Depends on a strong entity. Represented by **double rectangles** and **double diamonds**.
+
+---
+
+### **3. Explain Client-Server Architecture for DDBMS**
+
+The **Client-Server Architecture** divides responsibilities between **client** and **server**:
+
+- **Client (Application Tier):**
+  - Manages user interface and application logic.
+  - Sends database requests to the server.
+
+- **Server (Database Tier):**
+  - Processes queries, performs transaction management, and integrates results.
+  - Handles concurrency and recovery across distributed sites.
+
+**Advantages:** Scalability, centralized control, efficient data distribution, and improved performance.
+
+---
+
+### **4. With a Neat Diagram, Explain Multitiered Architecture**
+
+**Multitiered (N-Tier) Architecture** separates application logic into layers:
+
+1. **Presentation Tier:** User interface (e.g., web browser or mobile app).  
+2. **Application Tier:** Business logic, request routing, and security.  
+3. **Data Tier:** Database server managing data storage and transactions.
+
+**Advantages:** Scalability, maintainability, enhanced security, and modular deployment.
+
+---
+
+### **5. Discuss Data Warehouse Models**
+
+**Data Warehouse Models (Schemas):**
+
+1. **Star Schema:**  
+   - Central fact table connected to multiple dimension tables.  
+   - *Simple and fast for queries.*
+
+2. **Snowflake Schema:**  
+   - Dimension tables normalized into sub-dimensions.  
+   - *Less redundancy but more joins.*
+
+3. **Fact Constellation (Galaxy Schema):**  
+   - Multiple fact tables sharing dimension tables.  
+   - *Ideal for complex analytical systems.*
+
+---
+
+### **6. (Duplicate)**  
+Same as Q4 (Multitiered Architecture).
+
+---
+
+### **7. Discuss Features of NoSQL**
+
+**NoSQL (Not Only SQL)** databases are designed for large-scale, distributed, unstructured data.
+
+**Key Features:**
+- **Flexible Schema:** No fixed schema required.
+- **Horizontal Scalability:** Add servers easily (sharding).
+- **Data Models:**  
+  - Document (MongoDB),  
+  - Key-Value (Redis),  
+  - Column-Family (Cassandra),  
+  - Graph (Neo4j).
+- **High Availability:** Data replication and fault tolerance ensure uptime.
+
+---
+
+### **8. Briefly Discuss Hash-Based Indexing**
+
+**Concept:** Uses a **hash function** to map search keys to bucket addresses.  
+
+**Mechanism:**
+1. Key → Hash Function → Bucket Address.  
+2. Record pointer stored in that bucket.  
+
+**Advantages:** Fast access (O(1)) for equality searches.  
+**Types:**  
+- Static Hashing (fixed buckets).  
+- Dynamic Hashing (buckets grow/shrink dynamically).
+
+---
+
+### **9. Briefly Discuss Characteristics of the Database Approach**
+
+- **Self-Describing:** Contains both data and metadata.  
+- **Data Abstraction:** Hides physical details.  
+- **Multiple Views:** Customized user-specific views.  
+- **Data Sharing:** Multi-user concurrency.  
+- **Redundancy Control:** Ensures consistency.
+
+---
+
+### **10. Briefly Explain Union and Intersection**
+
+| Operation | Description | Result |
+|------------|--------------|---------|
+| **Union (∪)** | Combines tuples from both relations | All unique tuples |
+| **Intersection (∩)** | Common tuples from both relations | Common records only |
+
+**Condition:** Relations must be *union-compatible* (same attributes and domains).
+
+---
+
+### **11. Describe Database Security Threats**
+
+**Types of Threats:**
+- **Unauthorized Access:** Data theft via weak security.
+- **Integrity Violations:** Data alteration or corruption.
+- **Denial of Service:** Prevents valid user access.
+- **Privilege Abuse:** Insider misuse of privileges.
+- **Inference Attacks:** Deriving restricted data indirectly.
+
+---
+
+### **12. Write the Challenges in Building Blockchain Database**
+
+**Challenges:**
+- **Scalability:** Low transaction throughput.
+- **Latency:** Slow confirmation due to consensus mechanisms.
+- **Data Immutability:** Hard to update/delete.
+- **Storage Overhead:** High redundancy.
+- **Key Security:** Loss or theft of private keys.
+- **Regulatory Uncertainty:** Legal frameworks still evolving.
+
+---
+
+### **13. (Duplicate of Q8)**  
+Hash-Based Indexing – Refer to Q8.
+
+---
+
+### **14. With Neat Diagram Explain Two-Tier Architecture of Web Database**
+
+**Two-Tier Structure:**
+1. **Client Tier:** Web browser – handles user interface.  
+2. **Server Tier:** Database server – handles business logic and storage.
+
+**Flow:**
+Client → Request → Server → Query Execution → Response → Client.  
+
+**Drawbacks:** Less scalable, limited security, no middle-tier logic isolation.
+
+---
+
+### **15. (Duplicate of Q11)**  
+Database Security Threats – Refer to Q11.
+
+---
+
+### **16. Briefly Explain Graph Database**
+
+**Graph Databases** use **nodes** and **edges** to represent entities and relationships.
+
+- **Nodes:** Entities (e.g., Person, City).  
+- **Edges:** Relationships (e.g., FRIEND_OF, LIVES_IN).  
+- **Properties:** Key-value pairs attached to both nodes and edges.
+
+**Use Cases:** Social networks, fraud detection, recommendation engines.
+
+---
+
+### **17. Explain Select Operation in Relational Algebra**
+
+**Definition:** Filters rows (tuples) in a relation based on a condition.
+
+**Notation:** σ_condition(Relation)
+
+**Example:**  
+σ_Department='Sales'(Employee) → Returns employees working in Sales.
+
+---
+
+### **18. Discuss Concurrency Control Mechanisms**
+
+**Techniques:**
+1. **Locking Protocols:**  
+   - Shared Lock (Read)  
+   - Exclusive Lock (Write)  
+   - Two-Phase Locking (2PL)
+2. **Timestamp Ordering:** Transactions ordered by timestamps.  
+3. **Validation Technique:** Conflicts checked only at commit time.
+
+**Goal:** Maintain ACID properties, ensure consistency under concurrent access.
+
+---
+
+### **19. With an Example Explain Rename Operation in SQL**
+
+**Purpose:** Rename relations or attributes for clarity or self-joins.
+
+**Syntax:**  
+`SELECT column_name AS alias FROM table_name;`
+
+**Example:**  
+`SELECT S_ID AS Student_Identifier, Name FROM STUDENT;`
+
+**Self-Join Example:**  
+```
+SELECT T1.Name, T2.Name
+FROM EMPLOYEE AS T1, EMPLOYEE AS T2
+WHERE T1.Supervisor_ID = T2.Employee_ID;
+```
+
+---
+
+### **20. Explain the Steps to Design a Cloud-Based Database**
+
+1. **Analyze Requirements:** Define scalability, performance, and data model needs.  
+2. **Select Cloud Service:** Choose vendor (AWS, Azure, GCP).  
+3. **Plan Scalability:** Use sharding, clustering, and replication.  
+4. **Ensure Security:** Apply encryption, IAM roles, and compliance checks.  
+5. **Monitor and Optimize:** Track usage, automate scaling, and reduce cost.
+
+---
+
