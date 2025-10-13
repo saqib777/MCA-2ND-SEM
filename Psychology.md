@@ -409,9 +409,7 @@ Memory is the mental process of encoding, storing, and retrieving information. I
 
 ---
 
-===============================
-2.4 STAGES OF MEMORY
-===============================
+**2.4 STAGES OF MEMORY**
 
 1. Introduction
 ---------------
@@ -505,8 +503,7 @@ Memory is not a single unit; it has multiple types based on duration, content, a
 
 ---
 
-2. Types of Memory
-------------------
+**2. Types of Memory**
 
 A. Based on Duration
 --------------------
