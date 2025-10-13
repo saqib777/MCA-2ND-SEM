@@ -491,3 +491,91 @@ Memory progresses through three main stages: sensory memory (brief, raw data), s
 
 <img width="794" height="267" alt="image" src="https://github.com/user-attachments/assets/1ebe80ba-42d0-4f0f-af8c-de81b6939916" />
 
+---
+
+2.5 TYPES OF MEMORY 
+
+===============================
+2.5 TYPES OF MEMORY
+===============================
+
+1. Introduction
+---------------
+Memory is not a single unit; it has multiple types based on duration, content, and level of awareness. Psychologists classify memory to understand how different experiences, knowledge, and skills are stored and retrieved.
+
+---
+
+2. Types of Memory
+------------------
+
+A. Based on Duration
+--------------------
+1. **Sensory Memory**  
+   - Duration: Milliseconds to 2 seconds  
+   - Stores raw sensory information (sight, sound, touch, taste, smell) briefly.  
+   - Example: Recognizing a briefly flashed image.
+
+2. **Short-Term Memory (STM) / Working Memory**  
+   - Duration: 15–30 seconds without rehearsal  
+   - Holds information temporarily for immediate use or processing.  
+   - Example: Remembering a phone number long enough to dial it.
+
+3. **Long-Term Memory (LTM)**  
+   - Duration: Days to years, potentially permanent  
+   - Stores vast information including facts, events, skills, and experiences.  
+   - Example: Remembering childhood experiences or professional skills.
+
+---
+
+B. Based on Awareness
+----------------------
+1. **Explicit (Declarative) Memory** – Conscious recall  
+   - **Semantic Memory:** Facts, concepts, general knowledge (e.g., capital cities, definitions).  
+   - **Episodic Memory:** Personal experiences, events, and autobiographical information (e.g., your first day at school).
+
+2. **Implicit (Non-Declarative) Memory** – Unconscious memory  
+   - **Procedural Memory:** Skills and actions (e.g., riding a bike, tying shoelaces).  
+   - **Conditioned Responses:** Learned reflexes or habits (e.g., flinching at a loud sound).  
+   - **Priming:** Previous exposure influencing responses to stimuli.
+
+---
+
+C. Based on Content or Function
+-------------------------------
+1. **Sensory vs. Iconic vs. Echoic**  
+   - Sensory memory is divided into:
+     - **Iconic:** Visual sensory memory  
+     - **Echoic:** Auditory sensory memory
+
+2. **Short-term vs. Working Memory**  
+   - STM stores information passively.  
+   - Working memory actively manipulates information for cognitive tasks like reasoning and problem-solving.
+
+3. **Prospective vs. Retrospective Memory**  
+   - **Prospective Memory:** Remembering to perform actions in the future (e.g., attending a meeting).  
+   - **Retrospective Memory:** Remembering past events or learned information (e.g., recalling a lecture).
+
+---
+
+3. Summary Table
+----------------
+Type                        | Description                                     | Example
+-----------------------------|-----------------------------------------------|-------------------------------
+Sensory Memory               | Brief, raw sensory info                        | Flash of a car
+Short-Term / Working Memory  | Temporary storage for immediate use           | Phone number dialing
+Long-Term Memory             | Permanent storage of knowledge and experiences | Riding a bike, school events
+Explicit (Declarative)       | Conscious memory                               | Facts, personal experiences
+Implicit (Non-Declarative)   | Unconscious memory                             | Skills, habits, conditioned responses
+Prospective Memory           | Remembering future tasks                        | Attend a dentist appointment
+Retrospective Memory         | Remembering past events                         | Recalling last year’s holidays
+
+---
+
+4. Conclusion
+-------------
+Memory can be classified by duration, awareness, and function. Understanding the types of memory helps psychologists design learning strategies, therapies, and interventions for improving recall, skill acquisition, and behavior management.
+
+Exam Summary
+-------------
+Memory is categorized into sensory, short-term, and long-term based on duration; explicit (declarative) and implicit (non-declarative) based on awareness; and prospective vs. retrospective based on function. Each type plays a distinct role in human cognition and behavior.
+
