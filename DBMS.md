@@ -1964,7 +1964,7 @@ Cost-Based Optimization ensures **efficient query execution** by using statistic
 
 ---
 
-### **15 Marks Questions**
+# **15 Marks Questions**
 
 # DBMS – 10 Marks Notes
 
