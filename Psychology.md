@@ -284,6 +284,7 @@ Research literacy: ability to evaluate scientific literature and use evidence-ba
 Thus, qualification is not just academic—it also includes personal and ethical maturity.
 
 6. Specialization-wise Qualifications (Summary Table)
+
 Specialization	Minimum Qualification	Registration / Licensing Body	Main Practice Area
 Clinical Psychology	M.Phil. / Psy.D. / Ph.D.	RCI (India) / State or National Boards	Diagnosis & therapy for mental disorders
 Counseling Psychology	M.A. / M.Sc. in Counseling / Applied Psychology	Local psychological associations	Counseling for emotional & adjustment issues
