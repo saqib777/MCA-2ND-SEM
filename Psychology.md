@@ -1,6 +1,6 @@
 # BLOCK 1: APPLICATIONS OF PSYCHOLOGY-I
 
-===============================
+
 UNIT 1: PSYCHOLOGY AS A PROFESSION
 ===============================
 
