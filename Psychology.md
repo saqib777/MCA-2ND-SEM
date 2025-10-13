@@ -292,6 +292,8 @@ Industrial-Organizational Psychology	M.A./M.Sc. in Organizational Psychology	HR 
 Health Psychology	M.Sc. / Ph.D. in Health Psychology	Health Professions Boards	Behavior & health promotion
 Forensic Psychology	M.Sc./Ph.D. in Forensic Psychology	Forensic/Legal Boards	Legal, correctional, and court assessments
 Community Psychology	M.A./Ph.D. in Community Psychology	Academic or social service sectors	Community welfare, empowerment programs
+
+
 7. Importance of Proper Qualification
 
 Proper qualification ensures that:
