@@ -491,11 +491,9 @@ Memory progresses through three main stages: sensory memory (brief, raw data), s
 
 ---
 
-2.5 TYPES OF MEMORY 
+**2.5 TYPES OF MEMORY**
 
-===============================
-2.5 TYPES OF MEMORY
-===============================
+
 
 1. Introduction
 ---------------
@@ -506,7 +504,7 @@ Memory is not a single unit; it has multiple types based on duration, content, a
 **2. Types of Memory**
 
 A. Based on Duration
---------------------
+
 1. **Sensory Memory**  
    - Duration: Milliseconds to 2 seconds  
    - Stores raw sensory information (sight, sound, touch, taste, smell) briefly.  
