@@ -318,3 +318,176 @@ Thus, formal qualifications are not merely academic requirements; they represent
 Exam Summary (3–4 lines):
 Qualifications for psychology professions include formal education (Bachelor’s to Doctorate), supervised training, licensure, and ethical competence. These ensure that psychologists practice scientifically, ethically, and effectively across diverse fields such as clinical, counseling, health, and organizational psychology.
 
+---
+
+## UNIT-2: MEMORY IMPROVING TECHNIQUES
+
+
+Structure: 
+2.1 Objectives
+2.2 Introduction
+2.3 Memory
+2.4 Memory
+2.5 Improvement Techniques 
+2.6 Importance of Memory 
+2.7 Summary
+2.8 Keywords
+2.9 Check Your Progress 
+2.10 Answers to Check Your Progress  
+2.11 References  
+
+
+2.1 OBJECTIVES 
+After going through this unit, you will be able to explain:  
+ Memory 
+ Importance of Memory 
+ Stages of Memory 
+ Importance of Memory 
+ Memory Improvement Techniques  
+
+
+---
+
+===============================
+2.3 MEANING AND DEFINITION OF MEMORY
+===============================
+
+1. Introduction
+---------------
+Memory is a fundamental cognitive process in psychology. It is the ability of the mind to store, retain, and recall information and past experiences. Memory connects past experiences with present behavior and future actions, allowing individuals to learn, adapt, and make decisions.
+
+2. Meaning of Memory
+--------------------
+Memory is a mental capacity that enables individuals to take in information, store it, and retrieve it when needed. It involves three main stages:
+1. Encoding: Converting information into a form that can be stored in the brain.
+2. Storage: Maintaining the encoded information over a period of time.
+3. Retrieval: Bringing the stored information into conscious awareness when required.
+
+Thus, memory is a system of interrelated processes that helps us use past knowledge and experiences to guide present behavior.
+
+3. Definitions of Memory
+------------------------
+- Woodworth (1940): “Memory is the mental process of bringing past experiences into consciousness.”
+- Ryburn (1950): “Memory is the power to retain and recall what has been previously learned.”
+- Crow and Crow (1973): “Memory involves the storing and reproduction of what has been learned or experienced.”
+- Atkinson and Shiffrin (1968): “Memory is a system that processes information through stages—sensory register, short-term memory, and long-term memory.”
+- APA Dictionary of Psychology (2023): “Memory is the faculty by which information is encoded, stored, and retrieved when needed.”
+
+4. Psychological Understanding of Memory
+-----------------------------------------
+Memory is a dynamic and reconstructive process rather than a simple recording. It can be influenced by:
+- Attention and motivation
+- Emotions and stress
+- Interference from new information
+- Bias and perception
+
+5. Importance of Memory in Everyday Life
+-----------------------------------------
+- Learning: Retaining knowledge and skills.
+- Decision-making: Using past experiences to guide choices.
+- Identity: Forming a continuous sense of self.
+- Social interaction: Remembering people, events, and social norms.
+- Problem-solving: Applying previous solutions to new challenges.
+
+6. Summary Table
+----------------
+Aspect            | Description
+------------------|-------------------------------------------------
+Meaning           | Ability to store and recall past experiences.
+Core Processes     | Encoding → Storage → Retrieval
+Nature            | Reconstructive, selective, influenced by attention and emotion.
+Importance        | Essential for learning, thinking, and identity formation.
+Example           | Remembering a friend’s birthday or recalling a lesson for an exam.
+
+7. Conclusion
+--------------
+Memory is a complex, essential psychological function that allows humans to connect past, present, and future. It forms the foundation for learning, reasoning, and personal identity. Memory gives meaning to experience and helps individuals adapt intelligently to their environment.
+
+Exam Summary
+-------------
+Memory is the mental process of encoding, storing, and retrieving information. It enables individuals to retain experiences, apply knowledge, and adapt their behavior. As a reconstructive process, memory is vital for learning, decision-making, and human development.
+
+---
+
+===============================
+2.4 STAGES OF MEMORY
+===============================
+
+1. Introduction
+---------------
+Memory is not a single process; it occurs in distinct stages that allow information to be encoded, stored, and retrieved. Understanding these stages helps psychologists explain how learning, recall, and forgetting happen.
+
+2. Stages of Memory
+-------------------
+Memory can be divided into three main stages:
+
+A. Sensory Memory
+-----------------
+- **Definition:** The initial stage of memory that holds sensory information (sights, sounds, smells, touch) for a very brief period (milliseconds to 2 seconds).  
+- **Function:** Filters important information from the environment for further processing.  
+- **Example:** Remembering the appearance of a passing car for a few seconds.  
+- **Characteristics:** High capacity, extremely short duration, modality-specific (iconic for vision, echoic for hearing).
+
+B. Short-Term Memory (STM) / Working Memory
+-------------------------------------------
+- **Definition:** Temporary storage system for information currently in use, typically lasting 15–30 seconds without rehearsal.  
+- **Function:** Holds and manipulates information needed for cognitive tasks like problem-solving, comprehension, and reasoning.  
+- **Capacity:** Approximately 7 ± 2 items (Miller’s Law).  
+- **Example:** Remembering a phone number long enough to dial it.  
+- **Working Memory Components (Baddeley & Hitch, 1974):**
+  1. **Central Executive:** Directs attention and coordinates information.
+  2. **Phonological Loop:** Handles verbal and auditory information.
+  3. **Visuospatial Sketchpad:** Manages visual and spatial information.
+  4. **Episodic Buffer:** Integrates information from STM, LTM, and senses.
+
+C. Long-Term Memory (LTM)
+-------------------------
+- **Definition:** Relatively permanent memory system that stores vast amounts of information for extended periods (days to decades).  
+- **Function:** Provides a repository for knowledge, experiences, skills, and personal identity.  
+- **Types of LTM:**
+  1. **Explicit (Declarative) Memory:** Conscious recall of facts and events.
+     - Semantic Memory: General knowledge (e.g., capital of a country).  
+     - Episodic Memory: Personal experiences (e.g., last birthday).  
+  2. **Implicit (Non-Declarative) Memory:** Unconscious skills and habits (e.g., riding a bicycle, typing).  
+- **Example:** Remembering your school graduation ceremony or your home address.  
+
+---
+
+3. Flow of Information
+----------------------
+1. Information from the environment enters **Sensory Memory**.
+2. Attention moves selected information to **Short-Term Memory / Working Memory**.
+3. Through rehearsal, elaboration, or meaningful association, information is encoded into **Long-Term Memory**.
+4. Retrieval brings information back from LTM to STM for conscious use.
+
+---
+
+4. Importance of Understanding Stages
+-------------------------------------
+- Explains why we forget or misremember information.  
+- Helps design educational strategies (e.g., repetition, chunking).  
+- Guides cognitive therapy and memory enhancement techniques.  
+- Informs artificial intelligence and human-computer interaction research.
+
+---
+
+5. Summary Table
+----------------
+Stage                   | Duration       | Capacity       | Function / Example
+------------------------|----------------|----------------|-----------------
+Sensory Memory          | Milliseconds–2s| Very large    | Briefly holds sensory input; e.g., flash of a car
+Short-Term / Working Mem | 15–30 seconds  | 7 ± 2 items  | Holds info in use; e.g., phone number
+Long-Term Memory        | Permanent      | Essentially unlimited | Stores facts, skills, experiences; e.g., riding a bike
+
+---
+
+6. Conclusion
+-------------
+Memory occurs in stages—sensory, short-term/working, and long-term—which together allow humans to encode, store, and retrieve information. Understanding these stages is crucial for explaining learning, recall, forgetting, and for applying strategies in education, therapy, and cognitive development.
+
+Exam Summary
+-------------
+Memory progresses through three main stages: sensory memory (brief, raw data), short-term/working memory (temporary, limited), and long-term memory (permanent, vast). Each stage plays a critical role in encoding, storing, and retrieving information effectively.
+
+<img width="794" height="267" alt="image" src="https://github.com/user-attachments/assets/1ebe80ba-42d0-4f0f-af8c-de81b6939916" />
+
