@@ -1222,3 +1222,30 @@ These shifts are linked to better decision-making and problem-solving, and they 
 =========================================
 UNIT-5: PSYCHOLOGY IN EDUCATIONAL SETTING 
 =========================================
+
+Educational psychology is the scientific study of how people learn in educational settings, focusing on the learner, the learning process, and the learning environment. It applies psychological theories and principles to understand individual differences, motivation, cognitive development, classroom management, and the effectiveness of teaching methods.​
+
+Key Concepts:
+- Studies human development, learning processes, motivation, and individual differences among learners.​
+
+ - Explores major psychological theories such as behaviorism, cognitivism, and constructivism, which inform teaching strategies and lesson planning.​
+
+ - Monitors factors affecting learning, such as cognitive development (Piaget), social learning (Vygotsky), and classroom dynamics.​
+
+ - Promotes tailored instruction to support students’ unique needs, abilities, and learning styles.​
+
+Importance in Education:
+
+ - Provides teachers with insights and evidence-based strategies to enhance student learning and engagement.​
+
+ - Helps with designing effective curricula, assessments, and interventions for diverse classrooms and special education needs.​
+
+ - Supports teachers in understanding developmental stages, addressing learning barriers, and fostering inclusive educational environments.​
+
+Application:
+
+ - Teachers use psychological understanding to create supportive, engaging, and adaptive learning experiences.
+
+ - Educational psychology is critical for developing policies, curricula, and teaching methods that optimize educational outcomes for all students.​
+
+In summary, psychology in educational settings plays a foundational role in improving teaching, learning, and overall educational success by applying knowledge about how students learn, develop, and interact within the classroom.
