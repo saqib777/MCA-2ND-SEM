@@ -1,8 +1,8 @@
 
- ## CLOUD COMPUTING NOTES
+# CLOUD COMPUTING NOTES
 
 
-📘 5 MARKS QUESTIONS
+## 5 MARKS QUESTIONS
 
 
 1️⃣ Define Cloud Computing. Write Its Advantages. (Q1, Q7, Q12)
@@ -96,7 +96,7 @@ Cloud orchestration automates and coordinates multiple automated tasks into work
 • Goal: Streamline operations and ensure consistency across resources.
 
 ---────────
-📗 10 MARKS QUESTIONS
+## 10 MARKS QUESTIONS
 ---────────
 
 1️⃣ Types of Hardware Virtualization
@@ -172,7 +172,7 @@ Phases:
 Helps validate migration, uncover hidden costs, and optimize expenses.
 
 ---────────
-📙 15 MARKS QUESTIONS
+## 15 MARKS QUESTIONS
 ---────────
 
 1️⃣ Types of Cloud Computing (Q1, Q5, Q9)
